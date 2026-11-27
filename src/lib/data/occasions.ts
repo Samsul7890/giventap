@@ -111,16 +111,163 @@ export const OCCASIONS: OccasionCategory[] = [
 	}
 ];
 
-export function getDefaultTagDetails(slug: string): TagDetails {
-	const formattedSlug = slug ? slug.toUpperCase() : 'TK-8492';
-	return {
-		slug: formattedSlug.startsWith('TK-') ? formattedSlug : `TK-${formattedSlug}`,
+export interface KnownTag {
+	slug: string;
+	templateId: string;
+	chipModel?: string;
+	rewritesLeft?: number;
+	totalRewrites?: number;
+	revision?: string;
+	isLocked?: boolean;
+}
+
+export const KNOWN_TAGS: Record<string, KnownTag> = {
+	'TK-8492': {
+		slug: 'TK-8492',
+		templateId: 'valentine',
 		chipModel: 'NTAG213',
-		status: 'First Tap Detected',
 		rewritesLeft: 1,
 		totalRewrites: 3,
 		revision: 'Rev. 2025.2',
 		isLocked: false
+	},
+	'TK-1001': {
+		slug: 'TK-1001',
+		templateId: 'birthday',
+		chipModel: 'NTAG215',
+		rewritesLeft: 2,
+		totalRewrites: 3,
+		revision: 'Rev. 2025.2',
+		isLocked: false
+	},
+	'TK-2002': {
+		slug: 'TK-2002',
+		templateId: 'anniversary',
+		chipModel: 'NTAG213',
+		rewritesLeft: 1,
+		totalRewrites: 3,
+		revision: 'Rev. 2025.2',
+		isLocked: false
+	},
+	'TK-3003': {
+		slug: 'TK-3003',
+		templateId: 'graduation',
+		chipModel: 'NTAG215',
+		rewritesLeft: 3,
+		totalRewrites: 3,
+		revision: 'Rev. 2025.2',
+		isLocked: false
+	},
+	'TK-4004': {
+		slug: 'TK-4004',
+		templateId: 'wedding',
+		chipModel: 'NTAG213',
+		rewritesLeft: 1,
+		totalRewrites: 3,
+		revision: 'Rev. 2025.2',
+		isLocked: false
+	},
+	'TK-5005': {
+		slug: 'TK-5005',
+		templateId: 'just-because',
+		chipModel: 'NTAG215',
+		rewritesLeft: 2,
+		totalRewrites: 3,
+		revision: 'Rev. 2025.2',
+		isLocked: false
+	}
+};
+
+export function getTagInfo(rawTag: string | null | undefined): {
+	tagDetails: TagDetails;
+	selectedTemplateId: string;
+	isExisting: boolean;
+} {
+	if (!rawTag || !rawTag.trim()) {
+		// No tag parameter provided -> New tag setup
+		const newSlug = 'TK-NEW';
+		return {
+			tagDetails: {
+				slug: newSlug,
+				chipModel: 'NTAG213',
+				status: 'New Tag Detected',
+				rewritesLeft: 3,
+				totalRewrites: 3,
+				revision: 'Rev. 2025.2',
+				isLocked: false,
+				isExisting: false
+			},
+			selectedTemplateId: 'valentine',
+			isExisting: false
+		};
+	}
+
+	const trimmed = rawTag.trim();
+	const normalizedKey = trimmed.toUpperCase().startsWith('TK-')
+		? trimmed.toUpperCase()
+		: `TK-${trimmed.toUpperCase()}`;
+
+	// Check if known tag
+	if (KNOWN_TAGS[normalizedKey]) {
+		const known = KNOWN_TAGS[normalizedKey];
+		const template = OCCASIONS.find((o) => o.id === known.templateId) || OCCASIONS[0];
+		return {
+			tagDetails: {
+				slug: known.slug,
+				chipModel: known.chipModel || 'NTAG213',
+				status: 'Template Assigned',
+				rewritesLeft: known.rewritesLeft ?? 1,
+				totalRewrites: known.totalRewrites ?? 3,
+				revision: known.revision || 'Rev. 2025.2',
+				isLocked: known.isLocked ?? false,
+				isExisting: true,
+				templateId: template.id,
+				templateTitle: template.title
+			},
+			selectedTemplateId: template.id,
+			isExisting: true
+		};
+	}
+
+	// Check if tag parameter directly matches an occasion id
+	const matchedOccasion = OCCASIONS.find((o) => o.id.toLowerCase() === trimmed.toLowerCase());
+	if (matchedOccasion) {
+		return {
+			tagDetails: {
+				slug: `TK-${matchedOccasion.id.toUpperCase()}`,
+				chipModel: matchedOccasion.chipType || 'NTAG215',
+				status: 'Template Assigned',
+				rewritesLeft: 2,
+				totalRewrites: 3,
+				revision: 'Rev. 2025.2',
+				isLocked: false,
+				isExisting: true,
+				templateId: matchedOccasion.id,
+				templateTitle: matchedOccasion.title
+			},
+			selectedTemplateId: matchedOccasion.id,
+			isExisting: true
+		};
+	}
+
+	// Unrecognized / new tag
+	return {
+		tagDetails: {
+			slug: normalizedKey,
+			chipModel: 'NTAG213',
+			status: 'New Tag Detected',
+			rewritesLeft: 3,
+			totalRewrites: 3,
+			revision: 'Rev. 2025.2',
+			isLocked: false,
+			isExisting: false
+		},
+		selectedTemplateId: 'valentine',
+		isExisting: false
 	};
+}
+
+export function getDefaultTagDetails(slug: string): TagDetails {
+	return getTagInfo(slug).tagDetails;
 }
 

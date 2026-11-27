@@ -35,5 +35,8 @@ export interface TagDetails {
 	totalRewrites: number;
 	revision: string;
 	isLocked: boolean;
+	isExisting?: boolean;
+	templateId?: string;
+	templateTitle?: string;
 }
 

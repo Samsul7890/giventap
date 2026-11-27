@@ -34,7 +34,13 @@
 		</div>
 
 		<a
-			href={`/tag/${tagSlug}/customize?occasion=${selectedOccasion?.id ?? 'valentine'}`}
+			href={selectedOccasion?.id === 'birthday'
+				? `/birthday?tag=${encodeURIComponent(tagSlug)}`
+				: selectedOccasion?.id === 'valentine'
+				? `/valentine?tag=${encodeURIComponent(tagSlug)}`
+				: tagSlug
+				? `/?tag=${encodeURIComponent(tagSlug)}&step=customize&occasion=${selectedOccasion?.id ?? 'valentine'}`
+				: `/?step=customize&occasion=${selectedOccasion?.id ?? 'valentine'}`}
 			onclick={(e) => {
 				if (onContinue) {
 					onContinue();
@@ -42,7 +48,13 @@
 			}}
 			class="inline-flex items-center gap-space-xs px-6 py-3.5 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-[0_8px_20px_-4px_rgba(152,67,76,0.4)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-4px_rgba(152,67,76,0.5)] active:scale-95 shrink-0 group cursor-pointer"
 		>
-			<span>Personalize Message</span>
+			<span>
+				{selectedOccasion?.id === 'birthday'
+					? 'Buka Kado Birthday 🎁'
+					: selectedOccasion?.id === 'valentine'
+					? 'Buka Valentine Request 💌'
+					: 'Personalize Message'}
+			</span>
 			<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">
 				arrow_forward
 			</span>

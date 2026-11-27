@@ -20,7 +20,7 @@
 	<div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-desktop flex items-center justify-between gap-space-md">
 		<!-- Brand & Hardware Chip Identifier -->
 		<div class="flex items-center gap-space-md min-w-0 flex-shrink-0">
-			<a href={`/tag/${tagSlug}`} class="flex items-center gap-space-sm group">
+			<a href={tagSlug ? `/?tag=${encodeURIComponent(tagSlug)}` : '/'} class="flex items-center gap-space-sm group">
 				<div class="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-105 transition-transform duration-200">
 					<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">contactless</span>
 				</div>
@@ -43,7 +43,7 @@
 			aria-label="Workflow Steps"
 		>
 			<a
-				href={`/tag/${tagSlug}`}
+				href={tagSlug ? `/?tag=${encodeURIComponent(tagSlug)}` : '/'}
 				aria-current={currentStep === 1 ? 'page' : undefined}
 				class="px-4 py-1.5 rounded-full transition-all duration-200 text-label-md {currentStep === 1
 					? 'bg-surface-container-lowest text-primary font-bold shadow-[0_2px_8px_rgba(152,67,76,0.08)]'
@@ -52,7 +52,7 @@
 				Step 1 · Occasion
 			</a>
 			<a
-				href={`/tag/${tagSlug}/customize`}
+				href={tagSlug ? `/?tag=${encodeURIComponent(tagSlug)}&step=customize` : '/?step=customize'}
 				aria-current={currentStep === 2 ? 'page' : undefined}
 				class="px-4 py-1.5 rounded-full transition-all duration-200 text-label-md {currentStep === 2
 					? 'bg-surface-container-lowest text-primary font-bold shadow-[0_2px_8px_rgba(152,67,76,0.08)]'
@@ -61,7 +61,7 @@
 				Step 2 · Customize &amp; Lock
 			</a>
 			<a
-				href={`/tag/${tagSlug}/view`}
+				href={tagSlug ? `/?tag=${encodeURIComponent(tagSlug)}&step=view` : '/?step=view'}
 				aria-current={currentStep === 3 ? 'page' : undefined}
 				class="px-4 py-1.5 rounded-full transition-all duration-200 text-label-md {currentStep === 3
 					? 'bg-surface-container-lowest text-primary font-bold shadow-[0_2px_8px_rgba(152,67,76,0.08)]'
