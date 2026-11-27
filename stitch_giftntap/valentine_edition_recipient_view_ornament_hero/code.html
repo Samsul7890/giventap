@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Tap &amp; Keep — Dynamic NFC Keepsake Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-container": "#57121d", "primary-fixed-dim": "#ffb2b7", "secondary-container": "#d9c2fd", "on-tertiary-fixed": "#002118", "tertiary-container": "#46a488", "primary-container": "#d9777f", "surface-container-highest": "#f5ded7", "surface-container-low": "#fff1ed", "surface-container": "#ffe9e3", "on-tertiary": "#ffffff", "tertiary-fixed": "#97f4d5", "outline-variant": "#dac1c1", "on-primary-fixed": "#40010e", "on-error": "#ffffff", "inverse-on-surface": "#ffede8", "error": "#ba1a1a", "surface-bright": "#fff8f6", "outline": "#877273", "surface-tint": "#98434c", "on-background": "#251915", "inverse-primary": "#ffb2b7", "primary-fixed": "#ffdadb", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#7a2c36", "surface-dim": "#ecd5cf", "on-secondary-fixed": "#231141", "secondary-fixed-dim": "#d3bcf7", "on-secondary-container": "#604d80", "tertiary-fixed-dim": "#7bd8b9", "error-container": "#ffdad6", "on-primary": "#ffffff", "background": "#fff8f6", "surface-container-lowest": "#ffffff", "on-surface-variant": "#544243", "on-secondary-fixed-variant": "#503d6f", "inverse-surface": "#3b2d29", "secondary-fixed": "#ecdcff", "on-surface": "#251915", "on-tertiary-fixed-variant": "#00513f", "primary": "#98434c", "on-tertiary-container": "#003427", "surface-container-high": "#fbe3dd", "secondary": "#685588", "tertiary": "#006b54", "on-error-container": "#93000a", "surface": "#fff8f6", "surface-variant": "#f5ded7" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter": "1.25rem", "space-2xl": "4rem", "margin": "1rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter-desktop": "2rem", "margin-desktop": "2.5rem", "space-xl": "2.5rem" }, fontFamily: { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Newsreader"], "headline-md": ["Newsreader"], "body-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Newsreader"], "body-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Newsreader"], "display-lg": ["Newsreader"] }, fontSize: { "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased min-h-screen relative selection:bg-primary-fixed selection:text-on-primary-fixed"><div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden"><div class="absolute -top-32 -left-20 w-[520px] h-[520px] rounded-full bg-primary-fixed opacity-40 blur-[100px]"></div><div class="absolute top-1/4 -right-24 w-[480px] h-[480px] rounded-full bg-secondary-container opacity-35 blur-[110px]"></div><div class="absolute bottom-10 left-1/3 w-[560px] h-[560px] rounded-full bg-surface-container opacity-60 blur-[120px]"></div></div><header class="fixed top-0 inset-x-0 z-50 bg-surface/75 backdrop-blur-2xl shadow-[0_4px_20px_-4px_rgba(152,67,76,0.06)]"><div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0 flex-shrink-0"><div class="flex items-center gap-space-sm"><img alt="Tap &amp; Keep Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcgF9BfkzV1yUHELrA8jktpIz8fjqrl2x5WqQaP39tJMzsQreuGKe-GpaHXXLOvWVQb3gSexuYghnxO7uA6JDlDom9mZkvOYqpiNSMB9qyumorMM0jzVehMTrU-AqN4Mj0k54avcTzhknZrEyRLCRJw8EZFTPmr7ffUOhAwa5OFPatccfwnxHdyinxCfXMBUgW_ThSyOfjUtwZRyRh1vNWldU1pv09DMNKxU5HF7nruotVpMO2qU8i0w"/><span class="font-headline-sm text-headline-sm tracking-tight text-primary hidden sm:inline-block">Tap &amp; Keep</span></div><div class="hidden xl:flex items-center gap-space-xs px-3 py-1 rounded-full bg-surface-container-high/80 text-on-surface-variant font-label-sm text-label-sm shadow-[0_1px_4px_rgba(0,0,0,0.02)]"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span>Tag #TK-8492</span><span class="opacity-40">•</span><span class="text-tertiary font-medium">First Tap Detected</span></div></div><nav class="hidden md:flex items-center bg-surface-container-low/70 p-1.5 rounded-full shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]" data-active-classes="bg-surface-container-lowest text-primary font-bold shadow-[0_2px_8px_rgba(152,67,76,0.08)]"><a class="px-4 py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface hover:bg-surface-container-high" data-path="step-1-occasion" href="#">Step 1 · Occasion</a><a class="px-4 py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface hover:bg-surface-container-high" data-path="step-2-customize-lock" href="#">Step 2 · Customize &amp; Lock</a><a class="px-4 py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface hover:bg-surface-container-high" data-path="step-3-recipient-card-view" href="#">Step 3 · Recipient View</a></nav><div class="flex items-center gap-space-sm flex-shrink-0"><a class="hidden sm:inline-flex items-center px-3.5 py-1.5 rounded-full bg-surface-container/60 hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all duration-200" data-path="help-faq" href="#">Help &amp; FAQ</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_2px_8px_rgba(152,67,76,0.25)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 max-w-7xl mx-auto px-margin md:px-margin-desktop"><div class="flex flex-col w-full pb-space-2xl">
+<!-- Dynamic Top Ambient Aura & Sparkle Canvas -->
+<div class="relative w-full pt-space-md pb-space-lg">
+<!-- Status Ribbon / Micro Chips -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-lg">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high/80 backdrop-blur-md shadow-sm">
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold tracking-wide">Verified NFC Keepsake • Tag #TK-8492</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold tracking-wider uppercase">Sealed Permanently</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed/50 backdrop-blur-md text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-md text-label-md font-medium">Valentine Romance Edition • Tap Recipient Vault</span>
+</div>
+</div>
+<!-- Main Editorial Keepsake Grid: 5 / 7 Asymmetrical Luxury Split -->
+<div class="relative w-full mb-space-xl overflow-hidden rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-xl"><div class="relative w-full h-48 md:h-[260px] overflow-hidden rounded-t-3xl"><img alt="Romantic Valentine celebration banner with delicate pink and red garden roses" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOS9jYpfqiBFMunshi3r4lrWeyTFZq3FLnap8mGqUsxKrvtIPAMfujaHNqY_9k2BEMTRaDCGtkK6BGOc8BDOOuBZf5e2rGNcU490ovZHubFSnWQ3N8Y23vul5hltyWEcQdyLu_p5gYJZgHsVksVFBempc9C3SxpmwXMUsqkYOwjxhrkpq7koMN5TxPZdOGRJDjsvRS9gdyeIkSP2kGT53rFMCK4MDKKmrP4X7NA-yd"/><div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div></div><div class="relative px-space-md md:px-space-xl pb-space-lg pt-2 text-center flex flex-col items-center"><div class="flex flex-wrap items-center justify-center gap-2 mb-3"><span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-fixed/80 text-on-primary-fixed font-label-sm text-label-sm font-semibold shadow-sm">🌹 Be My Valentine</span><span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold shadow-sm">💖 Eternal Keepsake</span><span class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary-container/20 text-on-tertiary-container font-label-sm text-label-sm font-semibold shadow-sm">✨ Handcrafted Love</span></div><h1 class="font-headline-lg text-headline-lg md:font-display-lg md:text-display-lg text-on-surface leading-[1.15] mb-2">Happy Valentine's Day, Julian! 💌🌹</h1><p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Every heartbeat and quiet romantic whisper preserved in timeless NFC memory</p></div></div><div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- LEFT COLUMN: Dual Tactile Polaroids + Hardware Integrity (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-xl">
+<!-- Polaroids Dynamic Layered Canvas -->
+<div class="relative w-full pt-4 pb-8 flex items-center justify-center">
+<!-- Ambient Glow under Polaroids -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary-fixed/40 via-secondary-container/30 to-surface-container-high/50 rounded-3xl blur-2xl -z-10"></div>
+<!-- Bottom Polaroid (Offset & Tilted) -->
+<div class="absolute w-[86%] sm:w-[320px] aspect-[4/5] bg-surface-container-lowest p-3.5 pb-6 rounded-2xl shadow-xl transform -rotate-6 translate-x-3 translate-y-6 transition-all duration-300 hover:-rotate-3 hover:translate-y-4 cursor-pointer group">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container-high mb-3">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Intimate cozy candid couple laughing together wrapped in oversized knit woolen scarves sipping hot cocoa beside a snow-dusted rustic timber cabin terrace, golden twilight bokeh, gentle soft film grain and warm pastel lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCegippgM-A71j0qIksZBQX5tYwnPt7GbtEKopFWCOnnnYOUh63wxRXuXPxtKwgBKbOfxVKkN5CyPdJfdehMksKdEnDxXv7X4mKihCD7GOZY0Z7p9IHyu_PGiQl3o2Xy6PsjCoOnU85KG616X7mMtjCz04O1ZXKfA146klUa1rcYTZh95tHAhpp6YEqFpM5c94WFbJO1jIPQkjXEv0iK89Ftx-GXTCKm83ggga_sOwjlkjgU4jlGFVjpA"/>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-[10px] font-semibold text-on-surface-variant tracking-wider uppercase">
+                Dec 28
+              </div>
+</div>
+<p class="font-headline-sm text-headline-sm text-center text-on-surface/85 italic tracking-tight select-none">
+              Winter Walks &amp; Hot Cocoa
+            </p>
+</div>
+<!-- Top Polaroid (The Hero Attached Keepsake: https://lh3.googleusercontent.com/aida-public/AB6AXuDbjJ7DnLqxv1bdCqaN8Wy4ogaUDJhDj-CfEPtgGntATLq_mh3NG-MkZaaoxx3A9ZGU5_q185Ihz1KxVjIyH7-_gWyXH-nyh9U9Ak03hze6eTTysN2HYLfG5a3S5w1oRb6p4mXqYcKz8S3-EQY7UoK1kbrdu9flSqmNlhhklo7D_Ok5w-4S2z6egNLUo04KrXM-IjujIe2Wn1MxJlZBQIa6poygVE-xyKwUhwc36vT6TPm1_JYvcRCM4g) -->
+<div class="relative w-[92%] sm:w-[340px] aspect-[4/5] bg-surface-container-lowest p-4 pb-8 rounded-2xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-300 z-10 hover:shadow-[0_25px_50px_-12px_rgba(152,67,76,0.25)]">
+<!-- Pin / Tape Detail -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-4 bg-primary-fixed/80 backdrop-blur-sm rounded-sm shadow-sm opacity-80 rotate-1"></div>
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-surface-container mb-4 shadow-inner">
+<img alt="Sarah and Ben smiling warmly under sparkling evening fairy lights in thick winter scarves" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbjJ7DnLqxv1bdCqaN8Wy4ogaUDJhDj-CfEPtgGntATLq_mh3NG-MkZaaoxx3A9ZGU5_q185Ihz1KxVjIyH7-_gWyXH-nyh9U9Ak03hze6eTTysN2HYLfG5a3S5w1oRb6p4mXqYcKz8S3-EQY7UoK1kbrdu9flSqmNlhhklo7D_Ok5w-4S2z6egNLUo04KrXM-IjujIe2Wn1MxJlZBQIa6poygVE-xyKwUhwc36vT6TPm1_JYvcRCM4g"/>
+<div class="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wide">Archival Grade</span>
+</div>
+</div>
+<!-- Handwritten Script Sentiment -->
+<div class="text-center px-2">
+<p class="font-headline-md text-headline-md text-on-surface leading-tight tracking-tight select-none">
+                You &amp; Me Under The Fairy Lights ❤️
+              </p>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mt-1">
+                Feb 14th • Captured in Love
+              </p>
+</div>
+</div>
+</div>
+<!-- Telemetry & Hardware Authentication Stack -->
+<div class="flex flex-col gap-space-sm">
+<!-- Stats Strip -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-low p-space-md rounded-2xl flex items-center gap-3 shadow-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">contactless</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium">Memory Tap</p>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">56 Times</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-2xl flex items-center gap-3 shadow-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium">Vault State</p>
+<p class="font-headline-sm text-headline-sm text-tertiary font-bold">Write Locked</p>
+</div>
+</div>
+</div>
+<!-- Physical Micro-Chip Spec Card -->
+<div class="bg-surface-container-low/70 backdrop-blur-md p-space-md rounded-2xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">memory</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Hardware Authenticated</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">NTAG215 • AES-128 Permanent Seal</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-container/20 text-on-tertiary-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">verified</span> Validated
+            </span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Heartfelt Letter, Actions & Interactive Vault (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Main Keepsake Love Letter Card -->
+<article class="relative bg-surface-container-lowest/90 backdrop-blur-xl p-space-lg md:p-space-xl rounded-3xl shadow-xl overflow-hidden">
+<!-- Soft Rose Corner Gradient Decal -->
+<div class="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-primary-fixed/40 blur-3xl pointer-events-none"></div>
+<!-- Letter Meta Header -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-lg pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider text-primary">Unopened Valentine Capsule</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">event</span>
+<span>Recorded Feb 14 • Forever Intact</span>
+</div>
+</div>
+<!-- Recipient Dedication -->
+<h1 class="font-headline-lg text-headline-lg md:font-display-lg md:text-display-lg text-on-surface leading-[1.15] mb-space-md">
+            To my favorite person in the whole universe, Mateo! 💌
+          </h1>
+<!-- Emotive Editorial Letter Body -->
+<div class="space-y-space-md text-on-surface-variant font-body-lg text-body-lg leading-relaxed">
+<p>
+              I made this little keepsake because ordinary words in a fleeting text message could never hold what you mean to me. Remember that freezing night under the twinkling garden lights, laughing so hard our ribs ached while the steam rose from our cups?
+            </p>
+<p>
+              Every time the world gets dizzying and loud, holding on to your hand is what brings me back home. Your patience, your sudden midnight jokes, and the quiet comfort you bring into every room are treasures I never take for granted.
+            </p>
+<p class="text-on-surface italic font-headline-md text-headline-md leading-snug text-primary">
+              “Anytime you tap this keepsake with your phone, let it be an unbreakable reminder: a piece of my heartbeat is forever right here with you.”
+            </p>
+<p>
+              Happy Valentine’s Day, Mateo. Thank you for making ordinary days feel like poetry and winter evenings feel like pure sunshine.
+            </p>
+</div>
+<!-- Sign-Off & Signature Stamp -->
+<div class="mt-space-xl pt-space-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<div>
+<p class="font-label-sm text-label-sm tracking-wider uppercase text-outline">Eternal Devotion</p>
+<p class="font-headline-md text-headline-md text-primary font-serif italic mt-0.5">
+                Forever &amp; unconditionally yours, Elena 🌹
+              </p>
+</div>
+<!-- Wax Seal Style Graphic Badge -->
+<div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg transform -rotate-12 hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-on-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+</article>
+<!-- Interactive Engagement Deck (3 Pillars) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- 1. Tap Back Reaction Card -->
+<div class="bg-surface-container-low p-space-md rounded-2xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<span class="font-label-md text-label-md px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-bold" id="kiss-counter">58 💖</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Tap Back</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Send a tactile haptic kiss directly back to Elena’s phone tag.</p>
+</div>
+<button class="mt-space-md w-full py-2.5 px-3 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-md hover:bg-primary/95 active:scale-95 transition-all flex items-center justify-center gap-1.5" id="send-kiss-btn">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+<span>Send Sweet Kisses (Tap!)</span>
+</button>
+</div>
+<!-- 2. Wallet & Digital Vault Pass -->
+<div class="bg-surface-container-low p-space-md rounded-2xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">wallet</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold tracking-wider">Pass Ready</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Digital Archive</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Pin Elena’s polaroid note to your lock screen &amp; smart wallet.</p>
+</div>
+<div class="mt-space-md flex flex-col gap-1.5">
+<button class="w-full py-2 px-3 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container shadow-sm active:scale-95 transition-all flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">phone_iphone</span>
+<span>Apple Wallet Pass</span>
+</button>
+<button class="w-full py-2 px-3 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container shadow-sm active:scale-95 transition-all flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">android</span>
+<span>Google Wallet</span>
+</button>
+</div>
+</div>
+<!-- 3. Daily Romance Widget -->
+<div class="bg-surface-container-low p-space-md rounded-2xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-tertiary text-[22px]" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-tertiary-container/20 text-on-tertiary-container font-label-sm text-label-sm font-bold">Active</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Daily Sweet Reminder</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Syncs a surprise note from this vault to your home screen widget every sunrise.</p>
+</div>
+<div class="mt-space-md p-2.5 rounded-xl bg-surface-container-lowest/80 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">alarm_on</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface truncate">Next: Tomorrow at 8:00 AM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Docked Romantic Audio Player (Frosted Capsule) -->
+<div class="fixed bottom-6 right-6 z-40 max-w-sm w-[calc(100vw-3rem)] sm:w-auto">
+<div class="bg-surface-container-lowest/90 backdrop-blur-2xl px-4 py-3 rounded-full shadow-[0_16px_40px_-8px_rgba(152,67,76,0.3)] flex items-center justify-between gap-4">
+<!-- Spinning Heart / Vinyl Token -->
+<div class="relative flex-shrink-0">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-primary-container flex items-center justify-center animate-[spin_6s_linear_infinite] shadow-md">
+<span class="material-symbols-outlined text-on-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="absolute inset-0 rounded-full ring-2 ring-primary-fixed animate-ping opacity-30"></div>
+</div>
+<!-- Track Information & Animated EQ -->
+<div class="flex flex-col min-w-0 pr-1">
+<div class="flex items-center gap-1.5">
+<p class="font-label-md text-label-md font-bold text-on-surface truncate">Lover (Soft Acoustic)</p>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-tight">Audio Tag</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate text-[12px]">Taylor S. • Elena's Dedication</p>
+<!-- Animated EQ Bars -->
+<div class="flex items-end gap-0.5 h-3">
+<span class="w-0.5 bg-primary rounded-full h-3 animate-pulse"></span>
+<span class="w-0.5 bg-primary rounded-full h-2 animate-pulse" style="animation-delay: 150ms"></span>
+<span class="w-0.5 bg-primary rounded-full h-3.5 animate-pulse" style="animation-delay: 300ms"></span>
+<span class="w-0.5 bg-primary rounded-full h-1.5 animate-pulse" style="animation-delay: 450ms"></span>
+</div>
+</div>
+</div>
+<!-- Play / Pause Interaction Toggle -->
+<button aria-label="Toggle Playback" class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 shadow-md hover:scale-105 active:scale-95 transition-transform" id="audio-toggle-btn">
+<span class="material-symbols-outlined text-[20px]" id="audio-icon" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+</div>
+</div>
+<!-- Interactive JavaScript for Kisses & Audio Toggle -->
+<script>
+    (function() {
+      // Tap Back Kisses micro-interaction
+      const kissBtn = document.getElementById('send-kiss-btn');
+      const kissCounter = document.getElementById('kiss-counter');
+      let count = 58;
+
+      if (kissBtn && kissCounter) {
+        kissBtn.addEventListener('click', () => {
+          count++;
+          kissCounter.textContent = count + ' 💖';
+          kissBtn.classList.add('scale-105', 'bg-tertiary');
+          
+          // Micro confetti effect via heart element
+          const heart = document.createElement('span');
+          heart.innerHTML = '❤️';
+          heart.style.position = 'absolute';
+          heart.style.left = (kissBtn.getBoundingClientRect().left + 40 + Math.random() * 60) + 'px';
+          heart.style.top = (kissBtn.getBoundingClientRect().top - 20) + 'px';
+          heart.style.fontSize = '24px';
+          heart.style.pointerEvents = 'none';
+          heart.style.transition = 'all 1s ease-out';
+          heart.style.zIndex = '9999';
+          document.body.appendChild(heart);
+
+          requestAnimationFrame(() => {
+            heart.style.transform = 'translateY(-60px) scale(1.4)';
+            heart.style.opacity = '0';
+          });
+
+          setTimeout(() => {
+            heart.remove();
+            kissBtn.classList.remove('scale-105', 'bg-tertiary');
+          }, 1000);
+        });
+      }
+
+      // Audio dock play/pause toggle
+      const audioBtn = document.getElementById('audio-toggle-btn');
+      const audioIcon = document.getElementById('audio-icon');
+      let isPlaying = true;
+
+      if (audioBtn && audioIcon) {
+        audioBtn.addEventListener('click', () => {
+          isPlaying = !isPlaying;
+          audioIcon.textContent = isPlaying ? 'pause' : 'play_arrow';
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low/80 backdrop-blur-xl mt-space-2xl"><div class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-xl"><div class="flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex flex-col items-center md:items-start gap-space-xs text-center md:text-left"><p class="font-headline-sm text-headline-sm text-primary">Tap &amp; Keep™</p><p class="font-body-sm text-body-sm text-on-surface-variant">Physical-to-Digital Keepsake Protocol · Memory sealed via micro-frequency NFC</p></div><div class="flex items-center gap-space-sm px-4 py-2 rounded-full bg-surface-container-lowest/80 text-on-surface shadow-[0_2px_8px_rgba(0,0,0,0.03)]"><span class="material-symbols-outlined text-tertiary text-[20px]">verified_user</span><span class="font-label-md text-label-md text-on-surface-variant">Encrypted NTAG213/215 Write Protection Active</span></div><div class="flex flex-wrap items-center justify-center gap-space-md font-label-md text-label-md text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="help-faq" href="#">How It Works</a><a class="hover:text-on-surface transition-colors" data-path="tag-simulator" href="#">Tag Simulator</a><a class="hover:text-on-surface transition-colors" data-path="privacy-security" href="#">Privacy &amp; Encryption</a></div></div><div class="mt-space-lg pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm"><p>© 2025 Tap &amp; Keep Systems Inc. Crafted for lifelong affection.</p><p class="flex items-center gap-space-xs">Protected by Physical Cryptographic Tag Seals</p></div></div></footer></body></html>

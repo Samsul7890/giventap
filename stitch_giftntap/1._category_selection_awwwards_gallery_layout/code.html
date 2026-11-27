@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Tap &amp; Keep — Dynamic NFC Keepsake Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-container": "#57121d", "primary-fixed-dim": "#ffb2b7", "secondary-container": "#d9c2fd", "on-tertiary-fixed": "#002118", "tertiary-container": "#46a488", "primary-container": "#d9777f", "surface-container-highest": "#f5ded7", "surface-container-low": "#fff1ed", "surface-container": "#ffe9e3", "on-tertiary": "#ffffff", "tertiary-fixed": "#97f4d5", "outline-variant": "#dac1c1", "on-primary-fixed": "#40010e", "on-error": "#ffffff", "inverse-on-surface": "#ffede8", "error": "#ba1a1a", "surface-bright": "#fff8f6", "outline": "#877273", "surface-tint": "#98434c", "on-background": "#251915", "inverse-primary": "#ffb2b7", "primary-fixed": "#ffdadb", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#7a2c36", "surface-dim": "#ecd5cf", "on-secondary-fixed": "#231141", "secondary-fixed-dim": "#d3bcf7", "on-secondary-container": "#604d80", "tertiary-fixed-dim": "#7bd8b9", "error-container": "#ffdad6", "on-primary": "#ffffff", "background": "#fff8f6", "surface-container-lowest": "#ffffff", "on-surface-variant": "#544243", "on-secondary-fixed-variant": "#503d6f", "inverse-surface": "#3b2d29", "secondary-fixed": "#ecdcff", "on-surface": "#251915", "on-tertiary-fixed-variant": "#00513f", "primary": "#98434c", "on-tertiary-container": "#003427", "surface-container-high": "#fbe3dd", "secondary": "#685588", "tertiary": "#006b54", "on-error-container": "#93000a", "surface": "#fff8f6", "surface-variant": "#f5ded7" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter": "1.25rem", "space-2xl": "4rem", "margin": "1rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter-desktop": "2rem", "margin-desktop": "2.5rem", "space-xl": "2.5rem" }, fontFamily: { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Newsreader"], "headline-md": ["Newsreader"], "body-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Newsreader"], "body-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Newsreader"], "display-lg": ["Newsreader"] }, fontSize: { "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased min-h-screen relative selection:bg-primary-fixed selection:text-on-primary-fixed"><div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden"><div class="absolute -top-32 -left-20 w-[520px] h-[520px] rounded-full bg-primary-fixed opacity-40 blur-[100px]"></div><div class="absolute top-1/4 -right-24 w-[480px] h-[480px] rounded-full bg-secondary-container opacity-35 blur-[110px]"></div><div class="absolute bottom-10 left-1/3 w-[560px] h-[560px] rounded-full bg-surface-container opacity-60 blur-[120px]"></div></div><header class="fixed top-0 inset-x-0 z-50 bg-surface/75 backdrop-blur-2xl shadow-[0_4px_20px_-4px_rgba(152,67,76,0.06)]"><div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0 flex-shrink-0"><div class="flex items-center gap-space-sm"><img alt="Tap &amp; Keep Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcgF9BfkzV1yUHELrA8jktpIz8fjqrl2x5WqQaP39tJMzsQreuGKe-GpaHXXLOvWVQb3gSexuYghnxO7uA6JDlDom9mZkvOYqpiNSMB9qyumorMM0jzVehMTrU-AqN4Mj0k54avcTzhknZrEyRLCRJw8EZFTPmr7ffUOhAwa5OFPatccfwnxHdyinxCfXMBUgW_ThSyOfjUtwZRyRh1vNWldU1pv09DMNKxU5HF7nruotVpMO2qU8i0w"/><span class="font-headline-sm text-headline-sm tracking-tight text-primary hidden sm:inline-block">Tap &amp; Keep</span></div><div class="hidden xl:flex items-center gap-space-xs px-3 py-1 rounded-full bg-surface-container-high/80 text-on-surface-variant font-label-sm text-label-sm shadow-[0_1px_4px_rgba(0,0,0,0.02)]"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span>Tag #TK-8492</span><span class="opacity-40">•</span><span class="text-tertiary font-medium">First Tap Detected</span></div></div><nav class="hidden md:flex items-center bg-surface-container-low/70 p-1.5 rounded-full shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]" data-active-classes="bg-surface-container-lowest text-primary font-bold shadow-[0_2px_8px_rgba(152,67,76,0.08)]"><a aria-current="page" class="px-4 py-1.5 rounded-full transition-all duration-200 bg-surface-container-lowest text-primary font-bold shadow-[0_2px_8px_rgba(152,67,76,0.08)]" data-path="step-1-occasion" href="#">Step 1 · Occasion</a><a class="px-4 py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface hover:bg-surface-container-high" data-path="step-2-customize-lock" href="#">Step 2 · Customize &amp; Lock</a><a class="px-4 py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface hover:bg-surface-container-high" data-path="step-3-recipient-card-view" href="#">Step 3 · Recipient View</a></nav><div class="flex items-center gap-space-sm flex-shrink-0"><a class="hidden sm:inline-flex items-center px-3.5 py-1.5 rounded-full bg-surface-container/60 hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all duration-200" data-path="help-faq" href="#">Help &amp; FAQ</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_2px_8px_rgba(152,67,76,0.25)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 max-w-7xl mx-auto px-margin md:px-margin-desktop"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto pb-28 pt-4 px-2 sm:px-4">
+<!-- Ambient Tag Glow Deck -->
+<div class="relative bg-surface-container-lowest/80 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 md:p-10 shadow-[0_24px_50px_-12px_rgba(152,67,76,0.12)]">
+<!-- Top Micro Hardware & NFC Ping Header -->
+<div class="flex flex-col items-center text-center">
+<!-- Tactile Physical Tag Target Ring -->
+<div class="relative flex items-center justify-center mb-4">
+<div class="absolute w-24 h-24 rounded-full bg-primary-fixed opacity-40 animate-ping"></div>
+<div class="absolute w-20 h-20 rounded-full bg-primary-container/20 animate-pulse"></div>
+<div class="relative w-14 h-14 rounded-full bg-surface-container-lowest shadow-[0_8px_20px_rgba(152,67,76,0.18)] flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">contactless</span>
+</div>
+<div class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[13px]">check</span>
+</div>
+</div>
+<!-- Badge -->
+<div class="inline-flex items-center gap-space-xs px-3.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md shadow-sm mb-3">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Tag ID #TK-8492 Unlocked</span>
+<span class="opacity-40">•</span>
+<span class="font-body-sm text-body-sm font-semibold opacity-90">Micro-chip NTAG213</span>
+</div>
+<!-- Editorial Serifs Headline -->
+<h1 class="font-headline-lg text-headline-lg text-on-surface max-w-2xl leading-tight mb-2">
+          You’ve unlocked a new NFC gift tag!
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">
+          Turn this physical tag into an unforgettable digital keepsake. Choose an occasion to start tailoring the experience.
+        </p>
+</div>
+<!-- Awwwards-inspired Sleek Filter & Control Bar -->
+<div class="mt-8 pt-6 border-t border-outline-variant/30 flex flex-col gap-4">
+<div class="flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Occasion Vaults</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-bold">6</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Filters</span>
+<span class="w-4 h-4 rounded-full bg-primary text-on-primary text-[10px] flex items-center justify-center font-bold">1</span>
+</button>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span class="hidden sm:inline">Reset</span>
+</button>
+<div class="flex items-center bg-surface-container-low p-1 rounded-full">
+<button class="w-7 h-7 rounded-full bg-surface-container-lowest text-primary shadow-xs flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">grid_view</span>
+</button>
+<button class="w-7 h-7 rounded-full text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">view_agenda</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-2.5">
+<!-- Category Filter Pills -->
+<div class="flex flex-wrap items-center gap-1.5">
+<button class="px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-xs flex items-center gap-1.5 transition-all">
+<span>All Occasions</span>
+<span class="opacity-80 text-[10px]">6</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low/80 hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all flex items-center gap-1">
+<span>Romance</span>
+<span class="opacity-60 text-[10px]">2</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low/80 hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all flex items-center gap-1">
+<span>Milestones</span>
+<span class="opacity-60 text-[10px]">2</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low/80 hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all flex items-center gap-1">
+<span>Celebrations</span>
+<span class="opacity-60 text-[10px]">1</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low/80 hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all flex items-center gap-1">
+<span>Spontaneous</span>
+<span class="opacity-60 text-[10px]">1</span>
+</button>
+</div>
+<!-- Sorter dropdown pills -->
+<div class="flex items-center gap-2">
+<div class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-low/80 text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/30">
+<span>Sort:</span>
+<span class="font-semibold text-on-surface">Curated First</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</div>
+<div class="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-low/80 text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/30">
+<span>Mood:</span>
+<span class="font-semibold text-on-surface">Warm &amp; Intimate</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Awwwards Gallery 3-Column Grid -->
+<div aria-label="Gift Occasion Categories" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-6" id="category-grid" role="radiogroup">
+<!-- 1. Birthday Celebration -->
+<div aria-checked="false" class="group relative cursor-pointer select-none rounded-2xl bg-surface-container-lowest border border-outline-variant/30 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(152,67,76,0.12)] flex flex-col" data-category-card="" data-id="birthday" data-name="Birthday Celebration 🎉" data-theme="honey" role="radio" tabindex="0">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img alt="Birthday Celebration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1W6b6ZtqbIl7993756QX2A9WHnfK_VVQNONK4S6sOkvz76MeA9onT167uoco_ftBQlrd1oV92pTtGgeLZURVbk-cZQJXtn0Uzc2o5GL2B20ZLJsruQN70tzm7dcwZuJjZSdfsvfjYXTdQSDCj_X3RXH1ke68duU64nmbz0gBHtoh08pi1UA0IuH9TqDI2u6h8kkj3grAJnBBQouKlmR6OrmELrBsvXVAa1tIj_TbixOyA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
+<!-- Badges Overlay -->
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] uppercase tracking-wider font-bold shadow-xs">Popular</span>
+<span class="px-2 py-0.5 rounded-full bg-primary/85 backdrop-blur-md text-on-primary font-label-sm text-[11px] font-semibold flex items-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-[12px]">star</span>SOTD
+</span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md text-white font-label-sm text-[10px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>NTAG215
+</span>
+</div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white/90 font-label-sm text-[11px]">
+<span>Occasion #01</span>
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-[14px]">favorite</span> 2.4k</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between bg-surface-container-lowest">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-[18px] text-on-surface font-bold leading-tight group-hover:text-primary transition-colors">Birthday Celebration</h2>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">By Tap &amp; Keep Studio • Joyful Confetti Edition</p>
+</div>
+<div class="category-radio-icon w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center transition-all duration-200 shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-transparent text-[14px]">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+Celebrate another wonderful year of life, personal growth, and vibrant cheer.
+</p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between gap-2">
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-[12px] flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">visibility</span>Quick Preview
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary font-label-sm text-[12px] font-semibold transition-all flex items-center gap-1">
+<span>Select</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 2. Romantic Anniversary -->
+<div aria-checked="false" class="group relative cursor-pointer select-none rounded-2xl bg-surface-container-lowest border border-outline-variant/30 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(152,67,76,0.12)] flex flex-col" data-category-card="" data-id="anniversary" data-name="Romantic Anniversary 🥂" data-theme="champagne" role="radio" tabindex="0">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img alt="Romantic Anniversary" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1UYa57Re3RjO08YNm9__gpnSA603sI-tVd_TsuJpj_aETOsztkcjglK3aAv7UKuHOMm5MvT-Xi4xB5eu7Nwuv31dPFUp5rk9K7zZUnXWUbLwpkeRbW6aI2Woa3r_FrZalHUaYmHKDR7oGe8fA9_LwaXfb2vjCuwdZ2YaZgCwDyS-GM5KjMxFPK4f8FitaZE8x2EBLi5HA7-fAp62WAdEG8YVPLzfAAvG18PzrTZTnRuUw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
+<!-- Badges Overlay -->
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-semibold shadow-xs">Timeless</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] font-bold shadow-xs">Honor</span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md text-white font-label-sm text-[10px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>NTAG215
+</span>
+</div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white/90 font-label-sm text-[11px]">
+<span>Occasion #02</span>
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-[14px]">favorite</span> 1.9k</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between bg-surface-container-lowest">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-[18px] text-on-surface font-bold leading-tight group-hover:text-primary transition-colors">Romantic Anniversary</h2>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">By Tap &amp; Keep Studio • Golden Toast Edition</p>
+</div>
+<div class="category-radio-icon w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center transition-all duration-200 shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-transparent text-[14px]">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+Milestones, cherished dates, and enduring affection poured into one eternal toast.
+</p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between gap-2">
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-[12px] flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">visibility</span>Quick Preview
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary font-label-sm text-[12px] font-semibold transition-all flex items-center gap-1">
+<span>Select</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 3. Be My Valentine (DEFAULT ACTIVE SELECTION) -->
+<div aria-checked="true" class="group relative cursor-pointer select-none rounded-2xl bg-surface-container-lowest border-2 border-primary shadow-[0_16px_36px_rgba(152,67,76,0.22)] -translate-y-1 overflow-hidden transition-all duration-300 flex flex-col" data-category-card="" data-id="valentine" data-name="Be My Valentine ❤️" data-theme="rose" role="radio" tabindex="0">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-primary-fixed">
+<img alt="Be My Valentine" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1WaWEgnwCrnCrXE8lanO-IU6ZSgqIYaQ8-wMneMfO8T9iLbt-5HM21q5_FiGAUo_CmDBQqC8NjGU6qermGujvs5wOvX90hqw_jrQmtxDgkYgI_1jz0JxuF0h3JLEw4gOPYBtwlZnzrY-CA2bIZfidSns0Nphp-zotoMTDu5UEUsKg8U7JLaiOba_HFfyMiYK4Aqp-QMXx9vl3gg-70nbZ4U5GnQl8oVNRiAZq__AjclQA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-black/10"></div>
+<!-- Badges Overlay -->
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="category-badge-chip px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-[11px] font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">favorite</span>Selected
+</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-[11px] font-bold shadow-xs">Keepsake Pick</span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2 py-0.5 rounded-full bg-black/50 backdrop-blur-md text-white font-label-sm text-[10px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>NTAG215
+</span>
+</div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white font-label-sm text-[11px]">
+<span class="font-medium">Occasion #03 · Active</span>
+<span class="flex items-center gap-1 font-semibold"><span class="material-symbols-outlined text-[14px] text-primary-fixed">favorite</span> 3.8k</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between bg-primary-fixed/20">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-[18px] text-primary font-bold leading-tight">Be My Valentine</h2>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">By Tap &amp; Keep Studio • Heartfelt Rose Edition</p>
+</div>
+<div class="category-radio-icon w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center transition-all duration-200 shrink-0 mt-0.5 shadow-xs">
+<span class="material-symbols-outlined text-[15px] font-bold">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-2 line-clamp-2">
+For the one who holds your heart and secret smiles, wrapped in luminous botanicals.
+</p>
+</div>
+<div class="mt-4 pt-3 border-t border-primary/20 flex items-center justify-between gap-2">
+<button class="px-3 py-1.5 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-sm text-[12px] flex items-center gap-1 transition-colors shadow-xs">
+<span class="material-symbols-outlined text-[14px]">visibility</span>Quick Preview
+</button>
+<button class="px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-[12px] font-semibold transition-all flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Selected Occasion</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 4. Graduation & Honors -->
+<div aria-checked="false" class="group relative cursor-pointer select-none rounded-2xl bg-surface-container-lowest border border-outline-variant/30 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(152,67,76,0.12)] flex flex-col" data-category-card="" data-id="graduation" data-name="Graduation &amp; Honors 🎓" data-theme="emerald" role="radio" tabindex="0">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img alt="Graduation &amp; Honors" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XQhii0QauFEYm1_YakmoIWqeIQCK_Ml4HQdF3lUcwPPAEqQQqwBIukLdu923RsuQN2OlG8rx5XRc_AsuC7emu1oatN-h4Uj1L7aDSIZ4MbZC58N3Fvjb0vUs_Mwqzfr1xjYvTD03VtWPzNgDuWWDm-EFNrasbshoQ17OROGpRXNSgEKBZHnlkE9c1AAp0Cd_9Yw3rN2yA_JPMLzf5ti4F_M7DBeSf3_SlmGX5YbtxLeA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
+<!-- Badges Overlay -->
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[11px] font-semibold shadow-xs">New Era</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] font-bold shadow-xs">Milestone</span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md text-white font-label-sm text-[10px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>NTAG215
+</span>
+</div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white/90 font-label-sm text-[11px]">
+<span>Occasion #04</span>
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-[14px]">favorite</span> 1.4k</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between bg-surface-container-lowest">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-[18px] text-on-surface font-bold leading-tight group-hover:text-primary transition-colors">Graduation &amp; Honors</h2>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">By Tap &amp; Keep Studio • Golden Tassel Edition</p>
+</div>
+<div class="category-radio-icon w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center transition-all duration-200 shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-transparent text-[14px]">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+New chapters, hard-earned dreams, and boundless parental and personal pride.
+</p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between gap-2">
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-[12px] flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">visibility</span>Quick Preview
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary font-label-sm text-[12px] font-semibold transition-all flex items-center gap-1">
+<span>Select</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 5. Wedding & Engagement -->
+<div aria-checked="false" class="group relative cursor-pointer select-none rounded-2xl bg-surface-container-lowest border border-outline-variant/30 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(152,67,76,0.12)] flex flex-col" data-category-card="" data-id="wedding" data-name="Wedding &amp; Engagement 💍" data-theme="gold" role="radio" tabindex="0">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img alt="Wedding &amp; Engagement" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1Xkjq3CCGlsrWGwWCslstvxLTQAU3wryXCA1VFkiM7q9MtIl9b8ZM4QPI8GDGU33p2_Qzo_3Z4YCDPLaB9bXwL7lmO61qvXxsc6_8Y0HxwV48v6-jYebqQfj71rrz1XY-sZNYEBWOHHNeH-qaVhhwnXFnpnbXxmO3CqZU2mRm_-CR3QctVe20CeI4rzdhHy6eB9YileHBHHgR1BdLw06_pLqETSov2UriOeHeZMH71ziA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
+<!-- Badges Overlay -->
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-[11px] font-semibold shadow-xs">Everlasting</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] font-bold shadow-xs">Vows</span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md text-white font-label-sm text-[10px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>NTAG215
+</span>
+</div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white/90 font-label-sm text-[11px]">
+<span>Occasion #05</span>
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-[14px]">favorite</span> 3.1k</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between bg-surface-container-lowest">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-[18px] text-on-surface font-bold leading-tight group-hover:text-primary transition-colors">Wedding &amp; Engagement</h2>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">By Tap &amp; Keep Studio • Gardenia Gold Edition</p>
+</div>
+<div class="category-radio-icon w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center transition-all duration-200 shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-transparent text-[14px]">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+Two souls intertwining into one lifelong journey, sealed in gold and ethereal tulle.
+</p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between gap-2">
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-[12px] flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">visibility</span>Quick Preview
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary font-label-sm text-[12px] font-semibold transition-all flex items-center gap-1">
+<span>Select</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 6. Just Because -->
+<div aria-checked="false" class="group relative cursor-pointer select-none rounded-2xl bg-surface-container-lowest border border-outline-variant/30 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(152,67,76,0.12)] flex flex-col" data-category-card="" data-id="just-because" data-name="Just Because 💌" data-theme="lavender" role="radio" tabindex="0">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img alt="Just Because" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1WEfugv8FSsNp75YcdOS8lEQ_WbB-OiIRw1s8WjLZu-lfY1JI0O2NWd0pB5jLs1EwcXrVlGbEOXaRX1pMa-J4Get-jjKtKrvL2Dfc04qeoGNetMFFw_y4i5jCfmeRXXYG0sUamBS05XiXv3ybAL1He2rKBhfjfY_vgWpGgLg47ensUfw23mfCD_dVopp3LHZ0zGZGONnbdLrSlHVmh0CiFOgDx2YG2TA2ylR-ZhSA-YiA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
+<!-- Badges Overlay -->
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-semibold shadow-xs">Anytime</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] font-bold shadow-xs">Spontaneous</span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-md text-white font-label-sm text-[10px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>NTAG215
+</span>
+</div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white/90 font-label-sm text-[11px]">
+<span>Occasion #06</span>
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-[14px]">favorite</span> 2.1k</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between bg-surface-container-lowest">
+<div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-[18px] text-on-surface font-bold leading-tight group-hover:text-primary transition-colors">Just Because</h2>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">By Tap &amp; Keep Studio • Wildflower Gratitude Edition</p>
+</div>
+<div class="category-radio-icon w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center transition-all duration-200 shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-transparent text-[14px]">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">
+The quiet, unscripted moments that mean the most. No calendar excuse needed.
+</p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between gap-2">
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-[12px] flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">visibility</span>Quick Preview
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary font-label-sm text-[12px] font-semibold transition-all flex items-center gap-1">
+<span>Select</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Physical Verification Pill Callout -->
+<div class="mt-8 rounded-2xl p-4 bg-surface-container-high/60 flex items-start gap-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">lightbulb</span>
+<div class="flex-1">
+<p class="font-body-sm text-body-sm leading-relaxed">
+<strong class="font-semibold text-on-surface">Physical Reassurance:</strong> You can test tap this NFC tag with any iOS or Android device at any point while composing. The permanent lock happens only when you seal it.
+</p>
+</div>
+</div>
+<!-- Tag Security & Cryptographic Micro-Strip -->
+<div class="mt-6 pt-5 flex flex-wrap items-center justify-between gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>NTAG213 Micro-Chip Ready</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+<span>Writable (1 of 3 safe rewrites)</span>
+</div>
+<div class="text-on-surface-variant opacity-75">
+Rev. 2025.2
+</div>
+</div>
+</div>
+<!-- Floating Dock Bottom Action Bar -->
+<div class="fixed bottom-4 inset-x-4 max-w-xl mx-auto z-40">
+<div class="bg-surface-container-lowest/90 backdrop-blur-2xl p-3 sm:p-4 rounded-3xl shadow-[0_16px_36px_rgba(152,67,76,0.18)] flex items-center justify-between gap-3">
+<div class="min-w-0 pl-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Step 1 of 3</p>
+<p class="font-headline-sm text-headline-sm text-primary truncate font-bold" id="bottom-selected-label">
+Be My Valentine ❤️
+</p>
+</div>
+<a class="inline-flex items-center gap-space-xs px-6 py-3.5 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-[0_8px_20px_-4px_rgba(152,67,76,0.4)] transition-all duration-200 hover:-translate-y-0.5 active:scale-95 shrink-0" data-path="step-2-customize-lock" href="#" id="btn-next-step">
+<span>Personalize Message</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<script>
+    (function () {
+      const cards = document.querySelectorAll('[data-category-card]');
+      const bottomLabel = document.getElementById('bottom-selected-label');
+      let currentActive = document.querySelector('[data-category-card][aria-checked="true"]');
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => selectCategory(card));
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectCategory(card);
+          }
+        });
+      });
+
+      function selectCategory(selected) {
+        if (!selected || selected === currentActive) return;
+
+        // Reset previous card to default unselected look
+        if (currentActive) {
+          currentActive.setAttribute('aria-checked', 'false');
+          currentActive.className = "group relative cursor-pointer select-none rounded-2xl p-4 bg-surface-container-low/70 transition-all duration-300 hover:-translate-y-1 hover:bg-surface-container shadow-[0_4px_16px_rgba(152,67,76,0.04)] focus:outline-none";
+          
+          const prevTitle = currentActive.querySelector('h2');
+          if (prevTitle) prevTitle.className = "font-headline-sm text-headline-sm text-on-surface font-semibold";
+
+          const prevSubtitle = currentActive.querySelector('p');
+          if (prevSubtitle) prevSubtitle.className = "font-body-sm text-body-sm text-on-surface-variant mt-1";
+
+          const prevRadio = currentActive.querySelector('.category-radio-icon');
+          if (prevRadio) {
+            prevRadio.className = "category-radio-icon w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center transition-all duration-200";
+            const check = prevRadio.querySelector('.material-symbols-outlined');
+            if (check) check.className = "material-symbols-outlined text-transparent text-[14px]";
+          }
+          
+          const oldBadge = currentActive.querySelector('.category-badge-chip');
+          if (oldBadge) oldBadge.remove();
+        }
+
+        // Apply selected styling to clicked card
+        selected.setAttribute('aria-checked', 'true');
+        selected.className = "group relative cursor-pointer select-none rounded-2xl p-4 bg-primary text-on-primary transition-all duration-300 -translate-y-1 shadow-[0_12px_28px_-6px_rgba(152,67,76,0.35)] focus:outline-none";
+
+        const title = selected.querySelector('h2');
+        if (title) title.className = "font-headline-sm text-headline-sm text-on-primary font-semibold";
+
+        const subtitle = selected.querySelector('p');
+        if (subtitle) subtitle.className = "font-body-sm text-body-sm text-primary-fixed mt-1";
+
+        const radio = selected.querySelector('.category-radio-icon');
+        if (radio) {
+          radio.className = "category-radio-icon w-5 h-5 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center transition-all duration-200 shadow-xs";
+          const check = radio.querySelector('.material-symbols-outlined');
+          if (check) check.className = "material-symbols-outlined text-[14px] font-bold";
+        }
+
+        // Update sticky footer preview
+        const name = selected.getAttribute('data-name');
+        if (bottomLabel && name) {
+          bottomLabel.textContent = name;
+        }
+
+        currentActive = selected;
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low/80 backdrop-blur-xl mt-space-2xl"><div class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-xl"><div class="flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex flex-col items-center md:items-start gap-space-xs text-center md:text-left"><p class="font-headline-sm text-headline-sm text-primary">Tap &amp; Keep™</p><p class="font-body-sm text-body-sm text-on-surface-variant">Physical-to-Digital Keepsake Protocol · Memory sealed via micro-frequency NFC</p></div><div class="flex items-center gap-space-sm px-4 py-2 rounded-full bg-surface-container-lowest/80 text-on-surface shadow-[0_2px_8px_rgba(0,0,0,0.03)]"><span class="material-symbols-outlined text-tertiary text-[20px]">verified_user</span><span class="font-label-md text-label-md text-on-surface-variant">Encrypted NTAG213/215 Write Protection Active</span></div><div class="flex flex-wrap items-center justify-center gap-space-md font-label-md text-label-md text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="help-faq" href="#">How It Works</a><a class="hover:text-on-surface transition-colors" data-path="tag-simulator" href="#">Tag Simulator</a><a class="hover:text-on-surface transition-colors" data-path="privacy-security" href="#">Privacy &amp; Encryption</a></div></div><div class="mt-space-lg pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm"><p>© 2025 Tap &amp; Keep Systems Inc. Crafted for lifelong affection.</p><p class="flex items-center gap-space-xs">Protected by Physical Cryptographic Tag Seals</p></div></div></footer></body></html>

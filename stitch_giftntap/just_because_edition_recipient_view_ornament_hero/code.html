@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Tap &amp; Keep — Dynamic NFC Keepsake Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-container": "#57121d", "primary-fixed-dim": "#ffb2b7", "secondary-container": "#d9c2fd", "on-tertiary-fixed": "#002118", "tertiary-container": "#46a488", "primary-container": "#d9777f", "surface-container-highest": "#f5ded7", "surface-container-low": "#fff1ed", "surface-container": "#ffe9e3", "on-tertiary": "#ffffff", "tertiary-fixed": "#97f4d5", "outline-variant": "#dac1c1", "on-primary-fixed": "#40010e", "on-error": "#ffffff", "inverse-on-surface": "#ffede8", "error": "#ba1a1a", "surface-bright": "#fff8f6", "outline": "#877273", "surface-tint": "#98434c", "on-background": "#251915", "inverse-primary": "#ffb2b7", "primary-fixed": "#ffdadb", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#7a2c36", "surface-dim": "#ecd5cf", "on-secondary-fixed": "#231141", "secondary-fixed-dim": "#d3bcf7", "on-secondary-container": "#604d80", "tertiary-fixed-dim": "#7bd8b9", "error-container": "#ffdad6", "on-primary": "#ffffff", "background": "#fff8f6", "surface-container-lowest": "#ffffff", "on-surface-variant": "#544243", "on-secondary-fixed-variant": "#503d6f", "inverse-surface": "#3b2d29", "secondary-fixed": "#ecdcff", "on-surface": "#251915", "on-tertiary-fixed-variant": "#00513f", "primary": "#98434c", "on-tertiary-container": "#003427", "surface-container-high": "#fbe3dd", "secondary": "#685588", "tertiary": "#006b54", "on-error-container": "#93000a", "surface": "#fff8f6", "surface-variant": "#f5ded7" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter": "1.25rem", "space-2xl": "4rem", "margin": "1rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter-desktop": "2rem", "margin-desktop": "2.5rem", "space-xl": "2.5rem" }, fontFamily: { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Newsreader"], "headline-md": ["Newsreader"], "body-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Newsreader"], "body-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Newsreader"], "display-lg": ["Newsreader"] }, fontSize: { "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased min-h-screen relative selection:bg-primary-fixed selection:text-on-primary-fixed"><div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden"><div class="absolute -top-32 -left-20 w-[520px] h-[520px] rounded-full bg-primary-fixed opacity-40 blur-[100px]"></div><div class="absolute top-1/4 -right-24 w-[480px] h-[480px] rounded-full bg-secondary-container opacity-35 blur-[110px]"></div><div class="absolute bottom-10 left-1/3 w-[560px] h-[560px] rounded-full bg-surface-container opacity-60 blur-[120px]"></div></div><header class="fixed top-0 inset-x-0 z-50 bg-surface/75 backdrop-blur-2xl shadow-[0_4px_20px_-4px_rgba(152,67,76,0.06)]"><div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0 flex-shrink-0"><div class="flex items-center gap-space-sm"><img alt="Tap &amp; Keep Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcgF9BfkzV1yUHELrA8jktpIz8fjqrl2x5WqQaP39tJMzsQreuGKe-GpaHXXLOvWVQb3gSexuYghnxO7uA6JDlDom9mZkvOYqpiNSMB9qyumorMM0jzVehMTrU-AqN4Mj0k54avcTzhknZrEyRLCRJw8EZFTPmr7ffUOhAwa5OFPatccfwnxHdyinxCfXMBUgW_ThSyOfjUtwZRyRh1vNWldU1pv09DMNKxU5HF7nruotVpMO2qU8i0w"/><span class="font-headline-sm text-headline-sm tracking-tight text-primary hidden sm:inline-block">Tap &amp; Keep</span></div><div class="hidden xl:flex items-center gap-space-xs px-3 py-1 rounded-full bg-surface-container-high/80 text-on-surface-variant font-label-sm text-label-sm shadow-[0_1px_4px_rgba(0,0,0,0.02)]"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span>Tag #TK-8492</span><span class="opacity-40">•</span><span class="text-tertiary font-medium">First Tap Detected</span></div></div><nav class="hidden md:flex items-center bg-surface-container-low/70 p-1.5 rounded-full shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]" data-active-classes="bg-surface-container-lowest text-primary font-bold shadow-[0_2px_8px_rgba(152,67,76,0.08)]"><a class="px-4 py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface hover:bg-surface-container-high" data-path="step-1-occasion" href="#">Step 1 · Occasion</a><a class="px-4 py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface hover:bg-surface-container-high" data-path="step-2-customize-lock" href="#">Step 2 · Customize &amp; Lock</a><a class="px-4 py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface hover:bg-surface-container-high" data-path="step-3-recipient-card-view" href="#">Step 3 · Recipient View</a></nav><div class="flex items-center gap-space-sm flex-shrink-0"><a class="hidden sm:inline-flex items-center px-3.5 py-1.5 rounded-full bg-surface-container/60 hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all duration-200" data-path="help-faq" href="#">Help &amp; FAQ</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_2px_8px_rgba(152,67,76,0.25)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 max-w-7xl mx-auto px-margin md:px-margin-desktop"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow Orbs -->
+<div class="relative w-full">
+<!-- Header Notification Banner -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-lg">
+<div class="flex flex-wrap items-center gap-space-xs">
+<div class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-surface-container-high/90 text-on-surface shadow-sm backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">Verified NFC Keepsake</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Tag #TK-8492</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Sealed Permanently</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">card_giftcard</span>
+<span>Just Because Edition • Tap Recipient Vault</span>
+</div>
+</div>
+<!-- Main 12-Column Offset Keepsake Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- LEFT COLUMN: Physical Keepsake Polaroids Stack & NFC Hardware Verification (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Polaroids Dynamic Stack Showcase -->
+<div class="relative pt-4 pb-8 px-2 flex flex-col items-center">
+<!-- Bottom Underlaid Polaroid (Spontaneous Road Trip) -->
+<div class="w-full max-w-[360px] bg-surface-container-lowest p-4 pb-6 rounded-lg shadow-xl rotate-[4deg] transition-transform duration-300 hover:rotate-1 hover:scale-[1.02] cursor-pointer">
+<div class="relative aspect-square w-full rounded overflow-hidden bg-surface-container mb-3 shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Two best friends in retro 90s vintage film photography style laughing together from an open vintage car window during a warm golden hour coastal highway road trip, soft natural sunlight, peach flare, film grain, gentle nostalgia tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB28zNFccMhaUAPc9MElj3ovEiT3AkP7AlD7ego0lXYWml_VwdcQtrVacyHI8pjxLaURP6kPWnR0Wl7_iyc9aZjWbPUqAu06aKrz96CSq_jrafPzz6J8FM_Z9YtrBHNvFQDmnC-f7vZLG01Yn1DUtNj06ofIj590X2TSZngFWsMK0R10SP5QfylbzHNvGenrY9W2onWBdaa1XQJdk_s9GssHjDO3jV8Yy9SRz2H9u-uFVoQTwx1KLfgYw"/>
+<div class="absolute top-2 right-2 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-[10px] font-label-sm text-on-surface font-semibold shadow-sm">
+                Memory 02
+              </div>
+</div>
+<div class="flex items-center justify-between px-1">
+<p class="font-headline-md text-headline-sm italic text-on-surface-variant font-normal">
+                Spontaneous Road Trip Sunshine 🌻
+              </p>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">auto_awesome</span>
+</div>
+</div>
+<!-- Top Foreground Polaroid (Daily Crumb Coffee) -->
+<div class="w-full max-w-[370px] -mt-28 bg-surface-container-lowest p-4 pb-7 rounded-lg shadow-2xl -rotate-[3deg] transition-all duration-300 hover:rotate-0 hover:scale-[1.03] z-10 cursor-pointer">
+<div class="relative aspect-square w-full rounded overflow-hidden bg-surface-container mb-3 shadow-inner">
+<img alt="Two joyful friends laughing together over warm cappuccinos and fresh pastries inside The Daily Crumb bakery cafe" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCTcVCBgawEh7NptFSf5G1W5ShEK_ytVU7WV3fr2z7QJdbk9d2lyKwEoNR19UsZvWtzYaqsjR6___7MoYGGRwMADYmWpdPzjHX8wuBth4I-LknWdAfao5AnddMAq8hCfs9mhcAcCt6L5HErLMWr0fYnIRhBACg5N_nEKEtBnOxneX-SpZ55hm6qlJEfM_yc68K7EU_5jTunDsNgHXsZmrNWoQKaIBnK33Ts41J2zKFtCTq0Y2Q-U0znQ"/>
+<div class="absolute top-2.5 left-2.5 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[14px]">favorite</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Primary Keepsake</span>
+</div>
+</div>
+<div class="flex flex-col gap-0.5 px-1">
+<p class="font-headline-lg-mobile text-headline-sm italic text-on-surface tracking-tight">
+                The Daily Crumb Coffee Laughs ☕💛 - Nov 2023
+              </p>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">Table by the rainy window • "You had foam on your nose"</span>
+</div>
+</div>
+</div>
+<!-- Meta Verification Bar Under Polaroids -->
+<div class="bg-surface-container-low/90 backdrop-blur-md p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[22px]">verified</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Archival Photo Grade</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Fuji Instax Pro</span>
+</div>
+<!-- Live Taps Stat Meter -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-3 rounded-xl shadow-inner">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">contactless</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Physical Engagement</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">Tapped <span class="text-primary font-bold" id="tap-count-display">29</span> Times</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary bg-tertiary-fixed/30 px-2 py-1 rounded-full">Tag Active</span>
+</div>
+<!-- Micro Hardware Chip Info -->
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pt-1 px-1">
+<span class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">memory</span>
+              NXP NTAG215 • UID: 04:A2:8F:92:E3
+            </span>
+<span class="font-label-sm text-label-sm text-outline">Write-Locked 🔒</span>
+</div>
+</div>
+<!-- Audio Voice Note Capsule (As specified in Brand guide) -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-xl p-space-md rounded-2xl shadow-md flex items-center gap-space-md">
+<button class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-lg hover:scale-105 active:scale-95 transition-all flex-shrink-0" id="voice-memo-btn">
+<span class="material-symbols-outlined text-[24px]">play_arrow</span>
+</button>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<p class="font-label-md text-label-md font-bold text-on-surface truncate">Chloe's 14-sec Voice Memo</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">0:14</span>
+</div>
+<!-- Tactile Waveform Bars -->
+<div class="flex items-center gap-1 h-6 mt-1">
+<span class="w-1 h-3 rounded-full bg-secondary"></span>
+<span class="w-1 h-5 rounded-full bg-secondary"></span>
+<span class="w-1 h-2 rounded-full bg-secondary"></span>
+<span class="w-1 h-6 rounded-full bg-primary-container"></span>
+<span class="w-1 h-4 rounded-full bg-primary"></span>
+<span class="w-1 h-5 rounded-full bg-secondary"></span>
+<span class="w-1 h-3 rounded-full bg-secondary"></span>
+<span class="w-1 h-6 rounded-full bg-primary"></span>
+<span class="w-1 h-4 rounded-full bg-primary-container"></span>
+<span class="w-1 h-2 rounded-full bg-secondary"></span>
+<span class="w-1 h-5 rounded-full bg-secondary"></span>
+<span class="w-1 h-3 rounded-full bg-secondary"></span>
+<span class="w-1 h-4 rounded-full bg-primary"></span>
+<span class="w-1 h-2 rounded-full bg-secondary"></span>
+<span class="w-1 h-4 rounded-full bg-secondary"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Sentimental Letter, Emotional Seal & Interactive Actions (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg"><div class="relative bg-surface-container-lowest/90 backdrop-blur-2xl p-6 sm:p-8 rounded-3xl shadow-xl overflow-hidden border border-surface-container-high/40 flex flex-col gap-space-md"><div class="relative w-full h-[220px] sm:h-[260px] rounded-2xl overflow-hidden shadow-md"><img alt="Whimsical cozy Just Because celebration banner with warm dried wild flowers, delicate golden paper butterflies, soft pastel gratitude note envelopes, warm glowing fairy sparkles and pastel ribbons on warm cream background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNd7xyPYsrYrH2cqcM0qr5bVpaKpsha4DIG_vupsKo7h3gpxT-9RMmm1ZpDKauanSb5ymtcKvIxClLuFGba5nbxaDF5jRv1E7sSpBSVVXaZO3Y_WhEc7bb1-7tYD27-2ArTYSgEy6oshEwvKyESJdoirQXpAWu0mhO1UGsyFKCdW97QLdgn4lKN9R0xtaGY6HDVUgZ0H8s5LPtcoGltHwT9ruFoxeY0mRpX1uMhk_w"/><div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none"></div></div><div class="flex flex-wrap items-center gap-2"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed/30 text-on-tertiary-fixed font-label-sm text-label-sm font-semibold"><span class="material-symbols-outlined text-[15px] text-tertiary">potted_plant</span>🌿 Just Because</span><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold"><span class="material-symbols-outlined text-[15px] text-primary">favorite</span>💌 Spontaneous Love</span><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed font-label-sm text-label-sm font-semibold"><span class="material-symbols-outlined text-[15px] text-secondary">local_cafe</span>☕ Everyday Magic</span></div><div><h2 class="font-headline-lg text-headline-lg sm:text-display-lg text-on-surface leading-tight mb-2">Just Because You Are Sunshine, Chloe! <span class="text-primary font-normal">🌿💌</span></h2><p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">No holiday or milestone needed—just a tender reminder of how deeply you are cherished every day</p></div></div>
+<!-- The Sealed Emotional Parchment Card -->
+<div class="relative bg-surface-container-lowest/90 backdrop-blur-2xl p-6 sm:p-10 rounded-3xl shadow-xl overflow-hidden">
+<!-- Top Wax / Ribbon Seal Accent -->
+<div class="flex items-center justify-between mb-space-md">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">celebration</span>
+<span>Spontaneous Surprise</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Keepsake Ledger</span>
+<p class="font-label-sm text-label-sm font-semibold text-on-surface-variant">Sealed on a Quiet Tuesday • Forever Intact</p>
+</div>
+</div>
+<!-- Emotional Display Headline -->
+<h1 class="font-headline-lg text-headline-lg sm:text-display-lg text-on-surface leading-tight mb-space-md">
+            No Reason at All, Just Adoring You! <span class="text-primary font-normal">💛</span>
+</h1>
+<!-- Warm Personal Letter -->
+<div class="space-y-4 text-on-surface-variant font-body-lg text-body-lg leading-relaxed">
+<p>
+              Hi gorgeous, I saw this tiny wooden NFC tag and instantly knew it belonged on your desk. No promotion, no birthday, no milestone required—just a little physical anchor to say how truly lucky I am to have you as my human.
+            </p>
+<p>
+              From frantic iced lattes between meetings to endless laughing fits that make our stomachs hurt at The Daily Crumb, your kindness brightens every single chaotic week.
+            </p>
+<div class="p-4 rounded-2xl bg-surface-container-low/70 my-2">
+<p class="font-headline-md text-headline-md italic text-primary">
+                "Whenever the world feels a little heavy or work gets noisy, tap your phone right against this tag. It will always take you right here, to remind you that somebody loves you endlessly."
+              </p>
+</div>
+<p>
+              I promise we have countless more pastries to share, road trips to take with terrible playlists, and memories to seal. You are irreplaceable.
+            </p>
+</div>
+<!-- Signature & Signoff -->
+<div class="mt-space-lg pt-space-md flex flex-wrap items-end justify-between gap-4">
+<div>
+<p class="font-label-sm text-label-sm uppercase text-outline tracking-wider">With infinite affection,</p>
+<p class="font-headline-md text-headline-md italic text-primary font-medium">Your partner in crime, Chloe 🥐</p>
+</div>
+<div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>Physical Tag #TK-8492</span>
+</div>
+</div>
+</div>
+<!-- Recipient Action Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<!-- Action 1: Send Coffee Clink -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-md hover:shadow-lg transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">local_cafe</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold" id="clink-badge">31 ☕</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">Coffee Clink</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tap back instantly to send Chloe a warm cafe cheer notification.</p>
+</div>
+<button class="mt-4 w-full py-2.5 px-3 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-md hover:bg-on-primary-container active:scale-95 transition-all" id="clink-button">
+<span>Send Clink (Tap!)</span>
+<span class="material-symbols-outlined text-[16px]">touch_app</span>
+</button>
+</div>
+<!-- Action 2: Digital Archive Passes -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-md hover:shadow-lg transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">wallet</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">Offline</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">Friendship Pass</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Store your sealed token directly in Apple Wallet or Google Wallet.</p>
+</div>
+<button class="mt-4 w-full py-2.5 px-3 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all" id="wallet-btn">
+<span class="material-symbols-outlined text-[18px]">add_to_home_screen</span>
+<span>Add to Wallet</span>
+</button>
+</div>
+<!-- Action 3: Comfort Widget / Random Smile Generator -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-md hover:shadow-lg transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="w-10 h-10 rounded-full bg-tertiary-container/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">mood</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">Active</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">Smile Generator</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic" id="smile-quote">
+                "Remember when we ordered 4 croissants and pretended 2 were for work?"
+              </p>
+</div>
+<button class="mt-4 w-full py-2.5 px-3 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all" id="smile-refresh-btn">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>Another Memory</span>
+</button>
+</div>
+</div>
+<!-- Physical Seal Security Guarantee Ribbon -->
+<div class="bg-surface-container/60 p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[28px]">lock</span>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Permanent Cryptographic Memory Vault</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">This edition cannot be modified, deleted, or reassigned by anyone.</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary bg-surface-container-lowest px-3 py-1.5 rounded-full shadow-sm">
+            NFC Hardware Signed
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- FLOATING MUSIC CONTROLLER: Frosted Pill at lower right -->
+<div class="fixed bottom-6 right-6 z-40 max-w-sm">
+<div class="bg-surface-container-lowest/90 backdrop-blur-2xl p-2.5 pl-3.5 pr-3 rounded-full shadow-2xl flex items-center gap-3 border border-surface-container-high/40">
+<!-- Vinyl spinning disc -->
+<div class="w-10 h-10 rounded-full bg-inverse-surface flex items-center justify-center text-surface-container-lowest shadow-md animate-[spin_6s_linear_infinite]" id="vinyl-disc">
+<div class="w-3.5 h-3.5 rounded-full bg-primary flex items-center justify-center">
+<div class="w-1 h-1 rounded-full bg-surface-container-lowest"></div>
+</div>
+</div>
+<!-- Track Information & Dynamic Soundwave -->
+<div class="flex flex-col min-w-[130px]">
+<div class="flex items-center gap-1.5">
+<p class="font-label-md text-label-md font-bold text-on-surface truncate">Coffee Shop Acoustic</p>
+<!-- Tiny Equalizer Animated Bars -->
+<div class="flex items-end gap-0.5 h-3" id="equalizer-bars">
+<span class="w-0.5 h-2 bg-primary rounded-full animate-pulse"></span>
+<span class="w-0.5 h-3 bg-secondary rounded-full animate-bounce"></span>
+<span class="w-0.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+</div>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Playing Chloe's Playlist</p>
+</div>
+<!-- Play / Pause Action Button -->
+<button class="w-9 h-9 rounded-full bg-primary hover:bg-on-primary-container text-on-primary flex items-center justify-center shadow-md active:scale-90 transition-transform" id="audio-toggle-btn">
+<span class="material-symbols-outlined text-[20px]" id="audio-icon">pause</span>
+</button>
+</div>
+</div>
+<!-- Micro-Interactions Vanilla JS -->
+<script>
+    // Coffee Clink interaction
+    let clinkCount = 31;
+    let tapCount = 29;
+    const clinkBtn = document.getElementById('clink-button');
+    const clinkBadge = document.getElementById('clink-badge');
+    const tapDisplay = document.getElementById('tap-count-display');
+
+    if (clinkBtn) {
+      clinkBtn.addEventListener('click', () => {
+        clinkCount++;
+        tapCount++;
+        clinkBadge.textContent = clinkCount + ' ☕';
+        if (tapDisplay) tapDisplay.textContent = tapCount;
+        clinkBtn.classList.add('bg-tertiary');
+        clinkBtn.innerHTML = '<span>Clinked! ☕💛</span>';
+        setTimeout(() => {
+          clinkBtn.classList.remove('bg-tertiary');
+          clinkBtn.innerHTML = '<span>Send Clink (Tap!)</span><span class="material-symbols-outlined text-[16px]">touch_app</span>';
+        }, 1500);
+      });
+    }
+
+    // Audio pill toggle
+    let isPlaying = true;
+    const audioToggle = document.getElementById('audio-toggle-btn');
+    const vinyl = document.getElementById('vinyl-disc');
+    const audioIcon = document.getElementById('audio-icon');
+    const eqBars = document.getElementById('equalizer-bars');
+
+    if (audioToggle) {
+      audioToggle.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+          vinyl.classList.add('animate-[spin_6s_linear_infinite]');
+          audioIcon.textContent = 'pause';
+          eqBars.classList.remove('opacity-30');
+        } else {
+          vinyl.classList.remove('animate-[spin_6s_linear_infinite]');
+          audioIcon.textContent = 'play_arrow';
+          eqBars.classList.add('opacity-30');
+        }
+      });
+    }
+
+    // Random Smile Generator quotes
+    const smileQuotes = [
+      '"Remember when we ordered 4 croissants and pretended 2 were for work?"',
+      '"Driving at midnight singing Florence + The Machine completely off-key."',
+      '"When you spilled matcha on your white sweater and just laughed until crying."',
+      '"Our unspoken agreement that 3:00 PM is mandatory pastry hour."'
+    ];
+    let quoteIndex = 0;
+    const smileBtn = document.getElementById('smile-refresh-btn');
+    const smileText = document.getElementById('smile-quote');
+
+    if (smileBtn) {
+      smileBtn.addEventListener('click', () => {
+        quoteIndex = (quoteIndex + 1) % smileQuotes.length;
+        smileText.style.opacity = '0';
+        setTimeout(() => {
+          smileText.textContent = smileQuotes[quoteIndex];
+          smileText.style.opacity = '1';
+        }, 150);
+      });
+    }
+
+    // Wallet pass simulated feedback
+    const walletBtn = document.getElementById('wallet-btn');
+    if (walletBtn) {
+      walletBtn.addEventListener('click', () => {
+        walletBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-tertiary">check</span> Pass Saved!';
+        setTimeout(() => {
+          walletBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">add_to_home_screen</span> Add to Wallet';
+        }, 2000);
+      });
+    }
+
+    // Voice memo toggle
+    const voiceBtn = document.getElementById('voice-memo-btn');
+    let memoPlaying = false;
+    if (voiceBtn) {
+      voiceBtn.addEventListener('click', () => {
+        memoPlaying = !memoPlaying;
+        voiceBtn.innerHTML = memoPlaying 
+          ? '<span class="material-symbols-outlined text-[24px]">pause</span>' 
+          : '<span class="material-symbols-outlined text-[24px]">play_arrow</span>';
+      });
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low/80 backdrop-blur-xl mt-space-2xl"><div class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-xl"><div class="flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex flex-col items-center md:items-start gap-space-xs text-center md:text-left"><p class="font-headline-sm text-headline-sm text-primary">Tap &amp; Keep™</p><p class="font-body-sm text-body-sm text-on-surface-variant">Physical-to-Digital Keepsake Protocol · Memory sealed via micro-frequency NFC</p></div><div class="flex items-center gap-space-sm px-4 py-2 rounded-full bg-surface-container-lowest/80 text-on-surface shadow-[0_2px_8px_rgba(0,0,0,0.03)]"><span class="material-symbols-outlined text-tertiary text-[20px]">verified_user</span><span class="font-label-md text-label-md text-on-surface-variant">Encrypted NTAG213/215 Write Protection Active</span></div><div class="flex flex-wrap items-center justify-center gap-space-md font-label-md text-label-md text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="help-faq" href="#">How It Works</a><a class="hover:text-on-surface transition-colors" data-path="tag-simulator" href="#">Tag Simulator</a><a class="hover:text-on-surface transition-colors" data-path="privacy-security" href="#">Privacy &amp; Encryption</a></div></div><div class="mt-space-lg pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm"><p>© 2025 Tap &amp; Keep Systems Inc. Crafted for lifelong affection.</p><p class="flex items-center gap-space-xs">Protected by Physical Cryptographic Tag Seals</p></div></div></footer></body></html>

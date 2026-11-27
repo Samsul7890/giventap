@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Tap &amp; Keep — Dynamic NFC Keepsake Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-container": "#57121d", "primary-fixed-dim": "#ffb2b7", "secondary-container": "#d9c2fd", "on-tertiary-fixed": "#002118", "tertiary-container": "#46a488", "primary-container": "#d9777f", "surface-container-highest": "#f5ded7", "surface-container-low": "#fff1ed", "surface-container": "#ffe9e3", "on-tertiary": "#ffffff", "tertiary-fixed": "#97f4d5", "outline-variant": "#dac1c1", "on-primary-fixed": "#40010e", "on-error": "#ffffff", "inverse-on-surface": "#ffede8", "error": "#ba1a1a", "surface-bright": "#fff8f6", "outline": "#877273", "surface-tint": "#98434c", "on-background": "#251915", "inverse-primary": "#ffb2b7", "primary-fixed": "#ffdadb", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#7a2c36", "surface-dim": "#ecd5cf", "on-secondary-fixed": "#231141", "secondary-fixed-dim": "#d3bcf7", "on-secondary-container": "#604d80", "tertiary-fixed-dim": "#7bd8b9", "error-container": "#ffdad6", "on-primary": "#ffffff", "background": "#fff8f6", "surface-container-lowest": "#ffffff", "on-surface-variant": "#544243", "on-secondary-fixed-variant": "#503d6f", "inverse-surface": "#3b2d29", "secondary-fixed": "#ecdcff", "on-surface": "#251915", "on-tertiary-fixed-variant": "#00513f", "primary": "#98434c", "on-tertiary-container": "#003427", "surface-container-high": "#fbe3dd", "secondary": "#685588", "tertiary": "#006b54", "on-error-container": "#93000a", "surface": "#fff8f6", "surface-variant": "#f5ded7" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter": "1.25rem", "space-2xl": "4rem", "margin": "1rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter-desktop": "2rem", "margin-desktop": "2.5rem", "space-xl": "2.5rem" }, fontFamily: { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Newsreader"], "headline-md": ["Newsreader"], "body-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Newsreader"], "body-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Newsreader"], "display-lg": ["Newsreader"] }, fontSize: { "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased min-h-screen relative selection:bg-primary-fixed selection:text-on-primary-fixed"><div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden"><div class="absolute -top-32 -left-20 w-[520px] h-[520px] rounded-full bg-primary-fixed opacity-40 blur-[100px]"></div><div class="absolute top-1/4 -right-24 w-[480px] h-[480px] rounded-full bg-secondary-container opacity-35 blur-[110px]"></div><div class="absolute bottom-10 left-1/3 w-[560px] h-[560px] rounded-full bg-surface-container opacity-60 blur-[120px]"></div></div><header class="fixed top-0 inset-x-0 z-50 bg-surface/75 backdrop-blur-2xl shadow-[0_4px_20px_-4px_rgba(152,67,76,0.06)]"><div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0 flex-shrink-0"><div class="flex items-center gap-space-sm"><img alt="Tap &amp; Keep Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcgF9BfkzV1yUHELrA8jktpIz8fjqrl2x5WqQaP39tJMzsQreuGKe-GpaHXXLOvWVQb3gSexuYghnxO7uA6JDlDom9mZkvOYqpiNSMB9qyumorMM0jzVehMTrU-AqN4Mj0k54avcTzhknZrEyRLCRJw8EZFTPmr7ffUOhAwa5OFPatccfwnxHdyinxCfXMBUgW_ThSyOfjUtwZRyRh1vNWldU1pv09DMNKxU5HF7nruotVpMO2qU8i0w"/><span class="font-headline-sm text-headline-sm tracking-tight text-primary hidden sm:inline-block">Tap &amp; Keep</span></div><div class="hidden xl:flex items-center gap-space-xs px-3 py-1 rounded-full bg-surface-container-high/80 text-on-surface-variant font-label-sm text-label-sm shadow-[0_1px_4px_rgba(0,0,0,0.02)]"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span>Tag #TK-8492</span><span class="opacity-40">•</span><span class="text-tertiary font-medium">First Tap Detected</span></div></div><nav class="hidden md:flex items-center bg-surface-container-low/70 p-1.5 rounded-full shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]" data-active-classes="bg-surface-container-lowest text-primary font-bold shadow-[0_2px_8px_rgba(152,67,76,0.08)]"><a class="px-4 py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface hover:bg-surface-container-high" data-path="step-1-occasion" href="#">Step 1 · Occasion</a><a class="px-4 py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface hover:bg-surface-container-high" data-path="step-2-customize-lock" href="#">Step 2 · Customize &amp; Lock</a><a class="px-4 py-1.5 rounded-full text-on-surface-variant font-label-md text-label-md transition-all duration-200 hover:text-on-surface hover:bg-surface-container-high" data-path="step-3-recipient-card-view" href="#">Step 3 · Recipient View</a></nav><div class="flex items-center gap-space-sm flex-shrink-0"><a class="hidden sm:inline-flex items-center px-3.5 py-1.5 rounded-full bg-surface-container/60 hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all duration-200" data-path="help-faq" href="#">Help &amp; FAQ</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_2px_8px_rgba(152,67,76,0.25)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 max-w-7xl mx-auto px-margin md:px-margin-desktop"><div class="flex flex-col w-full pb-space-2xl">
+<!-- Top Ambient Keepsake Status Bar -->
+<div class="w-full flex flex-wrap items-center justify-between gap-space-sm mb-space-lg">
+<div class="flex flex-wrap items-center gap-space-xs sm:gap-space-sm">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed/40 text-on-tertiary-fixed font-label-sm text-label-sm shadow-sm backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-bold tracking-wide">VERIFIED NFC KEEPSAKE</span>
+<span class="opacity-40">•</span>
+<span>Tag #TK-8492</span>
+<span class="opacity-40">•</span>
+<span class="text-tertiary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+          Sealed Permanently
+        </span>
+</div>
+<div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+<span>Anniversary Milestone Edition • Tap Recipient Vault</span>
+</div>
+</div>
+<!-- Quick action pill -->
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-high/90 text-on-surface-variant font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-primary text-[14px]">contactless</span>
+        Physical NFC Handshake Active
+      </span>
+</div>
+</div>
+<!-- Primary Keepsake Story Grid (5/7 Editorial Asymmetric Layout) -->
+<div class="w-full mb-space-lg bg-surface-container-lowest/90 backdrop-blur-2xl p-space-md sm:p-space-lg rounded-lg shadow-xl relative overflow-hidden flex flex-col gap-space-md"><div class="relative w-full h-64 sm:h-[320px] rounded-lg overflow-hidden shadow-inner bg-surface-container"><img alt="Luxurious romantic anniversary celebration banner with golden champagne glasses toast" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQol-tB28Hcb__keC5rKQH57ZtaJmhMO8C5S8PIltXhgB_5yr957SbFXplcREv9tCGmCdxc15Hq4vF5l29DE7Lqsn1zQafrWumk6rw2XF_MAq6w38xKXs9yZ7bK1uLaogSeFeDpg5GT3q47NH5-Cuua-jmy0-arT9E7CgEk3CtqqnquJseinG4Q1vTeeUd1bUddzck_LknN1_y6B8iUWBNVoY36Ve5YW2ZpGn_GByO"/><div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 via-transparent to-transparent pointer-events-none"></div><div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center gap-space-xs"><span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm shadow-sm font-semibold">🥂 5 Years Together</span><span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm shadow-sm">✨ Amalfi Sunset Memory</span><span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-tertiary-fixed/60 backdrop-blur-md text-on-tertiary-fixed font-label-sm text-label-sm shadow-sm font-semibold">💍 Forever Sealed</span></div></div><div class="flex flex-col gap-space-xs"><h2 class="font-headline-lg text-headline-lg text-on-surface font-normal leading-tight">Happy 5th Anniversary, Marcus &amp; Elena! 🥂✨</h2><p class="font-headline-md text-[18px] sm:text-[20px] italic text-primary leading-snug">Half a decade of love, quiet laughter, and enduring grace preserved in timeless NFC memory</p></div></div><div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- LEFT COLUMN: Physical Keepsake Polaroids & Hardware Cryptographic Vault (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Tactile Polaroid Stack Component -->
+<div class="relative w-full pt-4 pb-8 px-2 flex justify-center">
+<!-- Ambient Warm Glow behind frames -->
+<div class="absolute inset-x-8 top-12 bottom-6 bg-gradient-to-tr from-primary-fixed via-secondary-container to-surface-container rounded-3xl blur-2xl opacity-60 -z-10"></div>
+<!-- Underneath Polaroid (Offset Rotated) -->
+<div class="absolute w-[88%] sm:w-[320px] bg-surface-container-lowest p-4 pb-8 rounded-xl shadow-md rotate-3 translate-x-3 translate-y-6 transition-transform duration-500 hover:rotate-6 select-none opacity-85 hover:opacity-100 cursor-pointer">
+<div class="w-full aspect-square rounded-lg overflow-hidden relative shadow-inner bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Intimate golden hour photograph of an affectionate couple toasting champagne flutes against the Mediterranean coast sunset, warm vintage tone, cinematic soft focus and film grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWkGSb_So2tsI6IU797P7s-m1ogaq2R07J7TJnt-x3wLMyqcNc-7rSxn2mF5aFswCwdHA5t_45lmgtDyFB5FyNB4hf7c6H5y6cq_nXglwSfQ8Gi0suCn2hqLXTmqd6UBQUTaXE8fUmzYmbqxQSaysdpFz08HEeLKNUa9sowkQhAx6F8ArkGmI90vZKTIewO4oY2i45x9Rv9_K7pRRFVkLS_JjcWdkFx8DVCuIGHkOx0ZOKw5DVbpbxZA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 via-transparent to-transparent"></div>
+</div>
+<div class="mt-4 flex items-center justify-between text-on-surface-variant">
+<p class="font-headline-md text-[18px] leading-snug italic text-on-surface">Paris Terrace Golden Hour</p>
+<span class="material-symbols-outlined text-primary text-[18px]">favorite</span>
+</div>
+</div>
+<!-- Foreground Polaroid (Hero Memory Frame) -->
+<div class="relative z-10 w-[92%] sm:w-[340px] bg-surface-container-lowest p-4 pb-8 rounded-xl shadow-xl -rotate-2 hover:rotate-0 transition-all duration-300">
+<!-- Top tape / sticker illusion -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-surface-container-highest/60 backdrop-blur-sm rounded-sm shadow-sm rotate-1"></div>
+<div class="w-full aspect-square rounded-lg overflow-hidden shadow-inner relative bg-surface-container-high group">
+<img alt="Clara and Julian toasting champagne flutes on sunset balcony" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2189d2-tE_GfB5xN1_wWcSmj4QjU506K3kZq7Y7P2lA4hCjFk8P9-oW3xR5V7t-JmK9vXyZtU8bQ2rE1pD7gM0sN"/>
+<!-- Ambient Vignette & Grain Filter -->
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-on-surface/20 pointer-events-none"></div>
+<!-- Instant Tag Badge Overlay -->
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-primary text-[14px]">nfc</span>
+<span>Hardware Sealed #001</span>
+</div>
+</div>
+<div class="mt-4 flex flex-col gap-1 text-center">
+<p class="font-headline-md text-headline-sm italic text-primary leading-tight">
+              10 Years of Us &amp; Forever To Go ✨
+            </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
+              OCTOBER 14TH • ANNIVERSARY VAULT
+            </span>
+</div>
+</div>
+</div>
+<!-- Keepsake Physical Credentials & Verification Card -->
+<div class="w-full bg-surface-container-lowest/90 backdrop-blur-xl p-space-lg rounded-lg shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed/60 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-none">NFC Cryptographic Seal</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Archival Museum Physical Grade</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm font-bold">
+            TAMPER-LOCKED
+          </span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-DEFAULT bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Times Tapped</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-lg text-headline-md text-primary font-medium" id="tap-count-display">24</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">cherished visits</span>
+</div>
+</div>
+<div class="p-space-sm rounded-DEFAULT bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Silicon Spec</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">NTAG213</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">144b OTP</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span>
+<span>First Sealed: Oct 14, 2024 • 19:42 CEST</span>
+</div>
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">format_image_left</span>
+            100-Year Retention
+          </span>
+</div>
+</div>
+<!-- Quick Preservation Actions -->
+<div class="p-space-md rounded-lg bg-surface-container/60 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">wallet</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Digital Archive Mirror</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Carry this keepsake offline everywhere</p>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm flex items-center justify-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">phone_iphone</span>
+            Apple Wallet
+          </button>
+<button class="flex-1 sm:flex-none px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm flex items-center justify-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">google</span>
+            Google Wallet
+          </button>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Emotional Narrative Letter, Milestones & Interactivity (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Letterpress Letter Card -->
+<div class="w-full bg-surface-container-lowest/90 backdrop-blur-2xl p-space-lg sm:p-space-xl rounded-lg shadow-xl relative overflow-hidden">
+<!-- Delicate Watermark Ring Background -->
+<div class="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-primary-fixed/30 blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-0 right-10 opacity-5 pointer-events-none select-none text-primary">
+<span class="material-symbols-outlined text-[220px]">wine_bar</span>
+</div>
+<!-- Envelope Overline -->
+<div class="flex flex-wrap items-center justify-between gap-space-xs pb-space-md">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">
+              KEEPSAKE LETTER • DEAR JULIAN
+            </span>
+</div>
+<div class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">history_edu</span>
+<span>Recorded Oct 14 • Forever Intact</span>
+</div>
+</div>
+<!-- Emotional Main Headline -->
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-normal leading-tight mt-1 mb-space-md">
+          A Decade of Loving You, Julian! 🥂
+        </h1>
+<!-- Emotional Body Letter in Editorial Serif & Clean Sans -->
+<div class="flex flex-col gap-space-md text-on-surface font-body-lg text-body-lg leading-relaxed">
+<p class="font-headline-md text-[22px] italic text-primary leading-relaxed">
+            Ten whole years ago today, we promised each other that every ordinary day would be celebrated like a quiet miracle. Looking at you across this sunset terrace, I see every promise alive in your eyes.
+          </p>
+<p class="text-on-surface-variant font-body-md text-body-md">
+            From those bleary-eyed 6:00 AM espresso rituals in our cramped first studio, to the crazy missed flights in Lisbon, to raising our little haven brick by brick—there isn’t a single grain of this decade I would trade. You make the simplest Tuesday feel like an unforgettable adventure.
+          </p>
+<p class="text-on-surface-variant font-body-md text-body-md">
+            I encoded our story into this physical keepsake ring so that no matter where your travels take you, whenever your phone taps the ceramic tag, this memory opens in your palm. It’s our permanent anchor. A reminder that in a loud, fast-moving world, my love for you is still, steady, and endless.
+          </p>
+<p class="font-headline-md text-headline-sm text-on-surface italic mt-space-sm">
+            Here is to ten years celebrated, ten thousand sunsets shared, and an eternity yet to write.
+          </p>
+</div>
+<!-- Signature & Ring Wax Seal Area -->
+<div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary shadow-inner">
+<span class="material-symbols-outlined text-[26px]">favorite</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-sm italic text-on-surface leading-snug">With all my soul &amp; devotion,</p>
+<p class="font-label-lg text-label-lg font-bold text-primary flex items-center gap-1.5">
+<span>Clara</span>
+<span class="text-secondary text-sm">💍 Wife &amp; Co-adventurer</span>
+</p>
+</div>
+</div>
+<!-- Micro Wax Seal Replica -->
+<div class="flex items-center gap-2 self-start sm:self-center px-4 py-2 rounded-full bg-surface-container-high/80 text-on-primary-fixed-variant shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">workspace_premium</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider uppercase">Seal #TK-8492-DECADAL</span>
+</div>
+</div>
+</div>
+<!-- Interactive Micro-Moments Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Interactive Love Tap Back Card -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-xl p-space-md rounded-lg shadow-md flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">favorite_border</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-none">Tap Back to Clara</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sends an ambient haptic flutter</p>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="love-counter">42 ❤️</span>
+</div>
+<button class="w-full py-3 px-space-md rounded-full bg-gradient-to-r from-primary-container to-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-95 transition-all duration-200" id="tap-back-button">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:scale-125">send</span>
+<span>Send Warm Love (Tap!)</span>
+</button>
+</div>
+<!-- Next Milestone Tracker Card -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-xl p-space-md rounded-lg shadow-md flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">celebration</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-none">Next Milestone</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Steel &amp; Coral Anniversary</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+              Year 11
+            </span>
+</div>
+<!-- Progress Bar & Days Countdown -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Countdown to Year 11</span>
+<span class="font-bold text-on-surface font-label-md text-label-md">365 Days to Next Tap</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full w-[8%] transition-all duration-1000"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Additional Photo Vignettes Gallery Grid -->
+<div class="bg-surface-container-low/70 backdrop-blur-md p-space-md rounded-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">collections</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Vault Memory Shards</p>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 Archival Moments</span>
+</div>
+<div class="grid grid-cols-3 gap-space-sm pt-space-xs">
+<div class="group relative aspect-[4/3] rounded-DEFAULT overflow-hidden shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Intimate film photo of two hands wearing matching wedding rings clasped together on rustic cafe table with two cups of cappuccino, golden morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM2WhSo9sri2WWFov9NUDOTFRCDo1_bgBSlzEgI5Cf2yxh7h-GMhMPcmwokR6VtX1fgzM_1rL1SkWoheQrhV4qZ8uNARLWuernyCeHxUHvHMehzaWqWTJO2eLK8Q63yxKG8b-DLNCphM65YBAYz7IqzV7YiVmh2B1DWZ503dC0JzJdODwrIXKQoLc33qkuc2XJvp7xbsZ2kintyypsps6xdchFkkZxcPkT7sUjI0Ky_UGNrS_ISKKl4Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2">
+<span class="text-on-primary font-label-sm text-label-sm truncate">Morning Coffee, Day 1</span>
+</div>
+</div>
+<div class="group relative aspect-[4/3] rounded-DEFAULT overflow-hidden shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Candid photograph of a happy couple laughing on a scenic mountain lookout trail during autumn, vibrant golden trees and mountain range backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALaLbo_tEw8LL4ejAM3jX38FeEtF2TpU3dlPn9rdGIpqpofk7W23qGG-3SxZLW8mmNG7zz2DQNnNreaI72rojM9T6vA6HO2JuLD3yHGDt2H2LD7kJ2tkvQcpmxdCsXeOXnP4_yChOwbikfkZKxlO7VPYtBayUiJ8H7RznZY7l5ZJCapsjedbbOHfXBYB8cwq8S5xpa222vOBiBL1eCnpg4tkh5S5Af8LBgHDzbpwu01-DRkFjSAAfj6w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2">
+<span class="text-on-primary font-label-sm text-label-sm truncate">Alps Hike, Year 5</span>
+</div>
+</div>
+<div class="group relative aspect-[4/3] rounded-DEFAULT overflow-hidden shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cozy ambient photo of a couple dancing in their living room under warm fairy lights, soft dreamy evening tone with vinyl record player in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB01nPjlNvFizWXwALTT-8U53RV9WB8ZbC_YYFIld0g_wGXqSVoqwR2NZ1h2gMyuZzcNoFu0XNyRMsTvMoqBk32i27JZV-vA-5n18oiOKdA9-Wbj9wKen8cN77sEbmisBo2O_KH9dc7CGq_tiXI5o0f2mCqvk298B7dTin5ebF9XVqps9ft-s1TS9pa5JFU9Z7QIXpBZy0nvcapQRYVpQedSuDOGmTI426cLUDG7205uZrck7kYLO2rFw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2">
+<span class="text-on-primary font-label-sm text-label-sm truncate">First Home Living Room</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Docked Floating Music Controller (Atmospheric Keepsake Track) -->
+<aside aria-label="Audio Keepsake Player" class="fixed bottom-6 right-6 z-40 max-w-sm w-[calc(100vw-3rem)] sm:w-auto">
+<div class="bg-surface-container-lowest/90 backdrop-blur-2xl p-2.5 sm:px-4 sm:py-2.5 rounded-full shadow-2xl flex items-center justify-between sm:justify-start gap-3 text-on-surface">
+<!-- Vinyl disc spinning disc -->
+<div class="relative w-10 h-10 rounded-full bg-inverse-surface flex items-center justify-center flex-shrink-0 animate-[spin_6s_linear_infinite]" id="vinyl-disc">
+<div class="w-4 h-4 rounded-full bg-primary-container border-2 border-surface-container-lowest flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-inverse-surface"></div>
+</div>
+</div>
+<!-- Song info & wave visualizer -->
+<div class="flex flex-col min-w-0 pr-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Keepsake Track</span>
+<div class="flex items-center gap-0.5 h-2.5">
+<span class="w-0.5 h-2.5 bg-primary rounded-full animate-bounce"></span>
+<span class="w-0.5 h-1.5 bg-primary rounded-full animate-bounce [animation-delay:0.2s]"></span>
+<span class="w-0.5 h-3 bg-primary rounded-full animate-bounce [animation-delay:0.4s]"></span>
+<span class="w-0.5 h-2 bg-primary rounded-full animate-bounce [animation-delay:0.1s]"></span>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface truncate font-semibold">Until I Found You • Acoustic Edition</p>
+</div>
+<!-- Play / Pause trigger -->
+<button class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition-all flex-shrink-0" id="audio-toggle-btn" title="Toggle Memory Audio">
+<span class="material-symbols-outlined text-[20px]" id="audio-icon">pause</span>
+</button>
+</div>
+</aside>
+<!-- Interactive Script for Micro-Interactions -->
+<script>
+    (function initKeepsakeInteractions() {
+      // 1. Love tap back micro-counter
+      const loveBtn = document.getElementById('tap-back-button');
+      const loveCounter = document.getElementById('love-counter');
+      const tapDisplay = document.getElementById('tap-count-display');
+      let currentLove = 42;
+      let totalTaps = 24;
+
+      if (loveBtn && loveCounter) {
+        loveBtn.addEventListener('click', () => {
+          currentLove++;
+          totalTaps++;
+          loveCounter.textContent = `${currentLove} ❤️`;
+          if (tapDisplay) {
+            tapDisplay.textContent = `${totalTaps}`;
+          }
+
+          // Create floating heart effect
+          const heart = document.createElement('span');
+          heart.innerHTML = '❤️';
+          heart.className = 'fixed pointer-events-none text-2xl transition-all duration-700 z-50';
+          
+          const rect = loveBtn.getBoundingClientRect();
+          heart.style.left = `${rect.left + rect.width / 2 + (Math.random() * 40 - 20)}px`;
+          heart.style.top = `${rect.top}px`;
+          heart.style.opacity = '1';
+          heart.style.transform = 'translateY(0) scale(1)';
+          document.body.appendChild(heart);
+
+          requestAnimationFrame(() => {
+            heart.style.opacity = '0';
+            heart.style.transform = `translateY(-60px) scale(${1.4 + Math.random() * 0.4})`;
+          });
+
+          setTimeout(() => {
+            heart.remove();
+          }, 750);
+        });
+      }
+
+      // 2. Audio playback controller toggle simulation
+      const audioBtn = document.getElementById('audio-toggle-btn');
+      const audioIcon = document.getElementById('audio-icon');
+      const vinylDisc = document.getElementById('vinyl-disc');
+      let isPlaying = true;
+
+      if (audioBtn && audioIcon && vinylDisc) {
+        audioBtn.addEventListener('click', () => {
+          isPlaying = !isPlaying;
+          if (isPlaying) {
+            audioIcon.textContent = 'pause';
+            vinylDisc.style.animationPlayState = 'running';
+          } else {
+            audioIcon.textContent = 'play_arrow';
+            vinylDisc.style.animationPlayState = 'paused';
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low/80 backdrop-blur-xl mt-space-2xl"><div class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-xl"><div class="flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex flex-col items-center md:items-start gap-space-xs text-center md:text-left"><p class="font-headline-sm text-headline-sm text-primary">Tap &amp; Keep™</p><p class="font-body-sm text-body-sm text-on-surface-variant">Physical-to-Digital Keepsake Protocol · Memory sealed via micro-frequency NFC</p></div><div class="flex items-center gap-space-sm px-4 py-2 rounded-full bg-surface-container-lowest/80 text-on-surface shadow-[0_2px_8px_rgba(0,0,0,0.03)]"><span class="material-symbols-outlined text-tertiary text-[20px]">verified_user</span><span class="font-label-md text-label-md text-on-surface-variant">Encrypted NTAG213/215 Write Protection Active</span></div><div class="flex flex-wrap items-center justify-center gap-space-md font-label-md text-label-md text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="help-faq" href="#">How It Works</a><a class="hover:text-on-surface transition-colors" data-path="tag-simulator" href="#">Tag Simulator</a><a class="hover:text-on-surface transition-colors" data-path="privacy-security" href="#">Privacy &amp; Encryption</a></div></div><div class="mt-space-lg pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm"><p>© 2025 Tap &amp; Keep Systems Inc. Crafted for lifelong affection.</p><p class="flex items-center gap-space-xs">Protected by Physical Cryptographic Tag Seals</p></div></div></footer></body></html>
